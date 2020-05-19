@@ -1,0 +1,63 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-10 mt-5">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <div class="single-post">
+                    <h1>{{ object.title }}</h1>
+                    <p class="lead">{{ object.preview }}</p>
+                    <div class="d-flex align-items-center justify-content-between mb-5">
+                        <div class="single-post-meta mr-4">
+                            <img class="single-post-meta-img" src="{{ object.author.profile.image.url }}" />
+                            <div class="single-post-meta-details">
+                                <div class="single-post-meta-details-name">{{ object.author.first_name }} {{ object.author.last_name }}</div>
+                                <div class="single-post-meta-details-date">{{ object.date_posted }} &middot; {{ object.read_time }} read</div>
+                            </div>
+                        </div>
+                        {{ share_string }}
+                        <div class="single-post-meta-links">
+                            <a href="https://twitter.com/intent/tweet/?text=Check%20out%20this%20article&url={{ request.build_absolute_uri }}&via=digitalstduio&hashtags=web,development">
+                                <i class="fab fa-twitter fa-fw"></i>
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+                                <i class="fab fa-facebook-f fa-fw"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title=Check%20out%20this%20article&source={{ request.build_absolute_uri }}&summary=digital%20studio">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <img class="img-fluid mb-2" src="{{ object.featured_image.url }}" />
+                    <div class="single-post-text my-5">
+                        <div class="content-markdown">
+                            {{ object.content }}
+                        </div>
+                        <hr class="my-5" />
+                        {% if object.author == request.user %}
+                        <div class="row">
+                            <div class="col-12">
+                                <a class="btn btn-primary btn-marketing btn-block rounded-pill mt-4" href="{% url 'blog:post-update' object.id %}">Update</a>
+                                <a class="btn btn-danger btn-marketing btn-block rounded-pill mt-4" href="{% url 'blog:post-delete' object.id %}">Delete</a>
+                            </div>
+                        </div>
+                        <hr class="my-5" />
+                        {% endif %}
+                        <div class="text-center"><a class="btn btn-transparent-dark btn-marketing rounded-pill" href="{% url 'blog:home' %}">Back to Blog</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-rounded text-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
+{% endblock %}

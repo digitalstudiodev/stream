@@ -1,0 +1,118 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Feed
+{% endblock title %}
+
+{% block content %}
+<header class="page-header page-header-dark bg-img-cover overlay overlay-80" style="background-image: url({% static 'assets/img/newark.jpg' %})">
+    <div class="page-header-content py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center">
+                    <div data-aos="fade-up">
+                        <h1 class="page-header-title">Creating a community of engaged co-workers <span class="text-danger">committed</span> to personal and professional <span class="text-danger">growth</span>.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-rounded text-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</header>
+<section class="bg-light py-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% for post in posts %}
+            {% if post.tag == "Featured" %}
+            <a class="card post-preview post-preview-featured lift mb-5" href="{% url 'blog:post-detail' post.id %}">
+                <div class="row no-gutters">
+                    <div class="col-lg-5">
+                        <div class="post-preview-featured-img" style="background-image: url({{ post.featured_image.url }})"></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="card-body">
+                            <div class="py-5">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.preview }}</p>
+                            </div>
+                            <hr />
+                            <div class="post-preview-meta">
+                                <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
+                                <div class="post-preview-meta-details">
+                                    <div class="post-preview-meta-details-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
+                                    <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} read</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+        {% endfor %}
+        <div class="row">
+            {% for post in posts %}
+                {% if post.tag != "Featured" %}
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100" href="{% url 'blog:post-detail' post.id %}">
+                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.preview }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="post-preview-meta">
+                            <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
+                            <div class="post-preview-meta-details">
+                                <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
+                                <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} read</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-blog justify-content-center">
+                {% if is_paginated %}
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                        </li>
+                    {% endif %}
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <div class="svg-border-rounded text-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
+{% endblock content %}
