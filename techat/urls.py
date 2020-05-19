@@ -25,5 +25,7 @@ urlpatterns = [
     path('', include('blog.urls', namespace='blog'))
 ]
 
+handler400 = 'users.views.error_view'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
