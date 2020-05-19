@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import User
 
-def error_view(request):
+def error_view(request, exception):
     if request.user.is_authenticated:
         messages.warning(request,f'Invalid Request. Please report any issue to via email to digitalstudio.dev000@gmail.com')
         return redirect('blog:home')
