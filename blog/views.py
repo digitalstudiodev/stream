@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 
+def feed(request):
+    return redirect('core:home')
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/blog.html'  # <app>/<model>_<viewtype>.html
