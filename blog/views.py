@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 
 def feed(request):
-    return redirect('core:home')
+    return redirect('blog:home')
 
 class PostListView(ListView):
     model = Post
