@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from django import forms
+
 
 def feed(request):
     return redirect('blog:home')
@@ -29,6 +31,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
+
     fields = ['title', 'preview', 'read_time', 'content', 'tag', 'featured_image']
 
     def form_valid(self, form):

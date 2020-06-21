@@ -25,4 +25,20 @@ Post
         </div>
     </div>
 </section>
+<!--markdown form editor-->
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+document.getElementById("id_content").required = false;
+window.onload = function() {
+    var simplemde = new SimpleMDE(
+        {
+            autofocus: true,
+            element: document.getElementById("id_content"),
+            spellChecker: true,
+            toolbar: false,
+            forceSync: true
+        }
+    )
+};
+</script>
 {% endblock %}
