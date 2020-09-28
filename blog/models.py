@@ -17,7 +17,7 @@ TAG_OPTIONS = (
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default="")
     preview = models.CharField(max_length=5000, default="")
     content = models.TextField(default="", verbose_name="Content")
     date_posted = models.DateTimeField(default=timezone.now)
@@ -31,6 +31,3 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:post-detail', kwargs={'pk': self.pk})
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
