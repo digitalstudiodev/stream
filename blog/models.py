@@ -21,7 +21,7 @@ class Post(models.Model):
     preview = models.CharField(max_length=5000, default="")
     content = models.TextField(default="", verbose_name="Content")
     date_posted = models.DateTimeField(default=timezone.now)
-    read_time = models.CharField(max_length=10, default="")
+    read_time = models.IntegerField(default=5, verbose_name="Read Time", help_text="in minutes")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     tag = models.CharField(max_length=100, choices=TAG_OPTIONS, default="Featured", null=False)
     featured_image = models.ImageField(default='default.png', upload_to='blog_pics', verbose_name="Featured Image")

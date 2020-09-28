@@ -30,7 +30,11 @@
                 <main>
                     <nav class="navbar navbar-marketing navbar-expand-lg bg-dark navbar-dark fixed-top">
                         <div class="container">
-                            <a class="navbar-brand text-white text-uppercase tech-font" href="{% url 'blog:home' %}"><img class="img-fluid white" src="{% static 'assets/img/logo.svg' %}" width="auto" height="100%" />&nbsp;<span class="logo text-uppercase">Stream</span>&nbsp;&nbsp;<span class="badge badge-pill badge-light">Blog</span></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
+                            <a class="navbar-brand text-white text-uppercase tech-font" href="{% url 'blog:home' %}">
+                                <span class="text-uppercase">Stream</span>
+                                <span class="badge badge-pill badge-light">Blog</span>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item"><a class="nav-link" href="{% url 'blog:home' %}">Home</a></li>
@@ -42,7 +46,7 @@
                                 {% if user.is_authenticated %}
                                 <a class="btn-danger btn rounded-pill px-4 ml-lg-4" href="{% url 'users:logout' %}">Logout<i class="fas fa-sign-out-alt"></i></a>
                                 {% else %}
-                                <a class="btn-danger btn rounded-pill px-4 ml-lg-4" href="https://digitalstudio.dev/contact.html">Contact Us<i class="fas fa-arrow-right ml-1"></i></a>
+                                <a class="btn-danger btn rounded-pill px-4 ml-lg-4" href="https://digitalstudio.dev/contact.html">Contact</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -56,8 +60,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
-                                <div class="footer-brand text-white text-uppercase tech-font"><img class="img-fluid white" src="{% static 'assets/img/logo.svg' %}" width="auto" height="50%" />&nbsp;<span class="logo text-uppercase">Stream</span>&nbsp;&nbsp;<span class="badge badge-pill badge-light">Blog</span></a></div>
-                                <div class="mb-3">Sharing the latest concepts and ideas in software development</div>
+                                <div class="footer-brand text-white text-uppercase tech-font">Stream&nbsp;<span class="badge badge-pill badge-light">Blog</span></a></div>
+                                <div class="mb-3">Sharing concepts, ideas, and code.</div>
                                 <div class="icon-list-social mb-5">
                                     <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/"><i class="fab fa-instagram"></i></a><a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/"><i class="fab fa-facebook"></i></a><a class="icon-list-social-link" href="https://github.com/digitalstudiodev"><i class="fab fa-github"></i></a><a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/"><i class="fab fa-linkedin"></i></a>
                                 </div>
@@ -79,7 +83,6 @@
                                         <div class="text-uppercase-expanded text-xs mb-4">Digital Studio</div>
                                         <ul class="list-unstyled mb-0">
                                             <li class="mb-2"><a href="http://digitalstudio.dev">Home</a></li>
-                                            <li class="mb-2"><a href="http://digitalstudio.dev/about.html">About</a></li>
                                             <li class="mb-2"><a href="http://digitalstudio.dev/contact.html">Contact</a></li>
                                         </ul>
                                     </div>
@@ -89,11 +92,6 @@
                         <hr class="my-5" />
                         <div class="row align-items-center">
                             <div class="col-md-6 small">Copyright &copy; <a href="index.html">Digital Studio</a> 2020</div>
-                            <!--<div class="col-md-6 text-md-right small">
-                                <a href="javascript:void(0);">Privacy Policy</a>
-                                &middot;
-                                <a href="javascript:void(0);">Terms &amp; Conditions</a>
-                            </div>-->
                         </div>
                     </div>
                 </footer>
