@@ -7,12 +7,10 @@ from PIL import Image
 
 TAG_OPTIONS = (
     ("Featured","Featured"),
-    ("AWS","AWS"),
-    ("Python","Python"),
-    ("Heroku","Heroku"),
-    ("Bootstrap","Bootstrap"),
-    ("Podcast","Podcast"),
-    ("Workflow","Workflow"),
+    ("Cloud","Cloud"),
+    ("Data","Data Science"),
+    ("Dev","Software Development"),
+    ("Phys","Physics"),
 )
 
 
