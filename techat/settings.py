@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.environ.get('DEBUG_VALUE')
+DEBUG = False #os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = ['*','studio-stream.herokuapp.com/','https://www.digitalstream.dev/','https://studio-stream.herokuapp.com/']
 
@@ -153,7 +153,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-'''
+
 #HTTPS settings
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -163,8 +163,8 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 3153600 #1 year
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-'''
+
 SITE_ID = 1
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 ##Digital Studio
