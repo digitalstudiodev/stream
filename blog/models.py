@@ -6,12 +6,16 @@ from multiselectfield import MultiSelectField
 from PIL import Image
 
 TAG_OPTIONS = (
-    ("FE","Featured"),
-    ("CD","Cloud"),
-    ("DS","Data Science"),
-    ("Dev","Full-Stack Development"),
-    ("AR","Augmented Reality"),
-    ("VR","Virtual Reality"),
+    ("Featured","Featured"),
+    ("Data","Data"),
+    ("Django","Django"),
+    ("AR","AR"),
+    ("VR","VR"),
+    ("Database","Database"),
+    ("Python","Python"),
+    ("AWS","AWS"),
+    ("Heroku","Heroku"),
+    ("Git","Git"),
 )
 
 
