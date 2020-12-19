@@ -9,8 +9,9 @@ TAG_OPTIONS = (
     ("Featured","Featured"),
     ("Cloud","Cloud"),
     ("Data","Data Science"),
-    ("Dev","Software Development"),
-    ("Phys","Physics"),
+    ("Dev","Full-Stack Development"),
+    ("AR","Augmented Reality"),
+    ("VR","Virtual Reality"),
 )
 
 
