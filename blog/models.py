@@ -22,7 +22,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     read_time = models.IntegerField(default=5, verbose_name="Read Time", help_text="in minutes")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    tag = models.CharField(max_length=100, choices=TAG_OPTIONS, default="Featured", null=False)
+    tag = MultiSelectField(max_length=100, choices=TAG_OPTIONS, default="Featured", null=False, blank=False, max_choices=4)
     featured_image = models.ImageField(default='default.png', upload_to='blog_pics', verbose_name="Featured Image")
 
     def __str__(self):
