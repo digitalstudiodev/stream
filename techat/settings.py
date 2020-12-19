@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #os.environ.get('DEBUG_VALUE')
 
-ALLOWED_HOSTS = ['studio-stream.herokuapp.com/','https://www.digitalstream.dev/']
+ALLOWED_HOSTS = ['studio-stream.herokuapp.com/','https://www.digitalstream.dev/','https://studio-stream.herokuapp.com/']
 
 
 # Application definition
