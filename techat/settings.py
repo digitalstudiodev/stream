@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE')
 
-ALLOWED_HOSTS = ['https://www.digitalstream.dev/','https://studio-stream.herokuapp.com/']
+ALLOWED_HOSTS = ['https://studio-stream.herokuapp.com/','https://www.digitalstream.dev/']
 
 
 # Application definition
@@ -163,7 +163,6 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 3153600 #1 year
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_REFERRER_POLICY = 'same-origin'
 
 SITE_ID = 1
 
