@@ -117,7 +117,7 @@ Feed
                 {% if is_paginated %}
                     {% if page_obj.has_previous %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                            <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
                         </li>
                     {% endif %}
                     {% for num in page_obj.paginator.page_range %}
@@ -129,7 +129,7 @@ Feed
                     {% endfor %}
                     {% if page_obj.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                            <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
                         </li>
                     {% endif %}
                 {% endif %}
