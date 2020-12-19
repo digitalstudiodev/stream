@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'multiselectfield',
     'storages',
-    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -164,6 +163,7 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 3153600 #1 year
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_REFERRER_POLICY = True
 
 SITE_ID = 1
 
