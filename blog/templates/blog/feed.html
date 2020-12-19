@@ -28,7 +28,8 @@ Feed
         </div>
         <hr class="mb-4" />
         {% for post in posts %}
-            {% if post.tag == "Featured" %}
+            {% for tag in post.tag %}
+                {% if tag == "Featured" %}
                 <div class="card mb-4">
                     <div class="card-body p-0">
                         <div class="row no-gutters">
@@ -41,7 +42,8 @@ Feed
                         </div>
                     </div>
                 </div>
-            {% endif %}
+                {% endif %}
+            {% endfor %}
         {% endfor %}
         <div class="d-flex align-items-center justify-content-between">
             <h6 class="mb-0">Recent Stories</h6>

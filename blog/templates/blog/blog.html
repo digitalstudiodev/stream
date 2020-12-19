@@ -60,55 +60,60 @@ Feed
             </div>
         </div>
         {% for post in posts %}
-            {% if post.tag == "Featured" %}
-            <a class="card post-preview post-preview-featured lift mb-5" href="{% url 'blog:post-detail' post.id %}">
-                <div class="row no-gutters">
-                    <div class="col-lg-5">
-                        <div class="post-preview-featured-img" style="background-image: url({{ post.featured_image.url }});"></div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="card-body">
-                            <div class="py-5">
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.preview }}</p>
-                            </div>
-                            <hr />
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
-                                    <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} minutes</div>
+            {% for tag in post.tag %}
+                {% if tag == "Featured" %}
+                <a class="card post-preview post-preview-featured lift mb-5" href="{% url 'blog:post-detail' post.id %}">
+                    <div class="row no-gutters">
+                        <div class="col-lg-5">
+                            <div class="post-preview-featured-img" style="background-image: url({{ post.featured_image.url }});"></div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="card-body">
+                                <div class="py-5">
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-text">{{ post.preview }}</p>
+                                </div>
+                                <hr />
+                                <div class="post-preview-meta">
+                                    <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
+                                    <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
+                                    <div class="post-preview-meta-details">
+                                        <div class="post-preview-meta-details-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
+                                        <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} minutes</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-            {% endif %}
+                </a>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
         <div class="row">
             {% for post in posts %}
-                {% if post.tag != "FE" %}
-            <div class="col-md-6 col-xl-4 mb-5">
-                <a class="card post-preview lift h-100" href="{% url 'blog:post-detail' post.id %}">
-                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
-                    <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.preview }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-preview-meta">
-                            <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
-                            <div class="post-preview-meta-details">
-                                <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
-                                <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} minutes</div>
+                {% for tag in post.tag %}
+                    {% if tag != "Featured" %}
+                    <div class="col-md-6 col-xl-4 mb-5">
+                        <a class="card post-preview lift h-100" href="{% url 'blog:post-detail' post.id %}">
+                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
+                            <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.preview }}</p>
                             </div>
-                        </div>
+                            <div class="card-footer">
+                                <div class="post-preview-meta">
+                                    <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
+                                    <div class="post-preview-meta-details">
+                                        <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
+                                        <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; Read Time ~ {{ post.read_time }} minutes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-                {% endif %}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </div>
         <nav aria-label="Page navigation example">
