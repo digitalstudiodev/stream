@@ -91,27 +91,25 @@ Feed
         {% endfor %}
         <div class="row">
             {% for post in posts %}
-                    {% if post.tag != "Featured" %}
-                    <div class="col-md-6 col-xl-4 mb-5">
-                        <a class="card post-preview lift h-100" href="{% url 'blog:post-detail' post.id %}">
-                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
-                            <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.preview }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-preview-meta">
-                                    <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
-                                    <div class="post-preview-meta-details">
-                                        <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
-                                        <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; Read Time ~ {{ post.read_time }} minutes</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100" href="{% url 'blog:post-detail' post.id %}">
+                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
+                    <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.preview }}</p>
                     </div>
-                    {% endif %}
+                    <div class="card-footer">
+                        <div class="post-preview-meta">
+                            <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
+                            <div class="post-preview-meta-details">
+                                <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
+                                <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; Read Time ~ {{ post.read_time }} minutes</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
             {% endfor %}
         </div>
         <nav aria-label="Page navigation example">
