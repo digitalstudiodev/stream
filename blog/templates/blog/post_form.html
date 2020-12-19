@@ -15,7 +15,39 @@ Post
                     {% csrf_token %}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4">New Blog Post</legend>
-                        {{ form|crispy }}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                {{ form.title|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-6">
+                                {{ form.preview|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                {{ form.read_time|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-6">
+                                {{ form.featured_image|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {{ form.content|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label>Tags (Pick 3 Max)</label>
+                                {% for value in form.tag %}
+                                    <div class="form-check bg-danger text-dark lift rounded-pill my-2 px-4 py-2 font-weight-bold">
+                                        <label class="form-check-label" for="gridCheck">
+                                            {{ value }}
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </fieldset>
                     <div class="form-group">
                         <button class="btn btn-danger btn-marketing btn-block rounded-pill mt-4" type="submit">Post</button>
