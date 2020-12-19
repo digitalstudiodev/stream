@@ -6,9 +6,9 @@ from multiselectfield import MultiSelectField
 from PIL import Image
 
 TAG_OPTIONS = (
-    ("Featured","Featured"),
-    ("Cloud","Cloud"),
-    ("Data","Data Science"),
+    ("FE","Featured"),
+    ("CD","Cloud"),
+    ("DS","Data Science"),
     ("Dev","Full-Stack Development"),
     ("AR","Augmented Reality"),
     ("VR","Virtual Reality"),
