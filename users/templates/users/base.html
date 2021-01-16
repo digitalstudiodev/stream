@@ -96,7 +96,7 @@
                                         </ul>
                                         <div class="text-uppercase-expanded text-xs my-4">Admin</div>
                                         <ul class="list-unstyled mb-0">
-                                            {% if user.authenticated %}
+                                            {% if request.user.authenticated %}
                                                 <li class="mb-4"><a href="{% url 'users:profile' %}">Profile</a></li>
                                                 <li class="mb-4"><a href="{% url 'users:logout' %}">Logout</a></li>
                                             {% else %}
