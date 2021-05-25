@@ -13,9 +13,31 @@ Feed
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center m-auto align-items-center">
                     <div data-aos="fade-up">
-                        <h1 class="page-header-title">
+                        <h1 class="page-header-title mb-5">
                             Sharing concepts, ideas, and code. 
                         </h1>
+                        <div class="row justify-content-center m-auto">
+                            <div class="icon-list-social mb-5">
+                                <a class="icon-list-social-link text-white" href="https://www.instagram.com/digitalstudio.dev/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="icon-list-social-link text-white" href="https://www.facebook.com/digitalstudio.dev/">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a class="icon-list-social-link text-white" href="https://github.com/digitalstudiodev">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a class="icon-list-social-link text-white" href="https://www.linkedin.com/company/digitalstudio-dev/">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a class="icon-list-social-link text-white" href="https://medium.com/digital-studio-stream">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                                <a class="icon-list-social-link text-white" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,7 +92,7 @@ Feed
                         <div class="col-lg-7">
                             <div class="card-body">
                                 <div class="py-5">
-                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <h5 class="card-title mb-3">{{ post.title }}</h5>
                                     <p class="card-text">{{ post.preview }}</p>
                                 </div>
                                 <hr />
@@ -117,19 +139,19 @@ Feed
                 {% if is_paginated %}
                     {% if page_obj.has_previous %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                            <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
                         </li>
                     {% endif %}
                     {% for num in page_obj.paginator.page_range %}
                         {% if page_obj.number == num %}
-                            <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
                         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                            <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
                         {% endif %}
                     {% endfor %}
                     {% if page_obj.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                            <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
                         </li>
                     {% endif %}
                 {% endif %}

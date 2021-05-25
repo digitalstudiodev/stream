@@ -10,10 +10,10 @@
 <section class="bg-light py-10 mt-5">
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-xl-8">
+            <div class="col-lg-12">
                 <div class="single-post">
-                    <h1>{{ object.title }}</h1>
-                    <p class="lead">{{ object.preview }}</p>
+                    <h1 class="mb-5 text-center display-3 font-weight-bold">{{ object.title }}</h1>
+                    <p class="text-dark mb-5">{{ object.preview }}</p>
                     <div class="d-flex align-items-center justify-content-between mb-5">
                         <div class="single-post-meta mr-4">
                             <img class="single-post-meta-img" src="{{ object.author.profile.image.url }}" />
@@ -50,7 +50,7 @@
                         </div>
                         <hr class="my-5" />
                         {% endif %}
-                        <div class="text-center"><a class="btn btn-transparent-dark btn-marketing rounded-pill" href="{% url 'blog:home' %}">Back to Blog</a></div>
+                        <div class="text-center"><a class="btn btn-dark btn-marketing rounded-pill" href="{% url 'blog:home' %}">Back to Blog</a></div>
                     </div>
                 </div>
             </div>

@@ -8,39 +8,39 @@ Register
 
 {% block content %}
 <header class="page-header mt-5">
-  <div class="page-header-content">
-      <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+    <div class="page-header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
-          </div>
-          <div class="row align-items-center">
-              <div class="col-lg-6 m-auto">
-                  <div class="card rounded-lg text-dark">
-                      <div class="card-body">
-                        <h1 class="card-title text-center">Register</h1>
-                        <p>
-                          If you already have an account please <a href="{% url 'users:login' %}">login</a>
-                        </p>
-                        <form class="login" method="POST">
-                          {% csrf_token %}
-                          {{ form|crispy }}
-                          <button class="btn btn-danger btn-marketing btn-block rounded-pill mt-4" type="submit">Register</button>
-                        </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="svg-border-waves text-dark">
+            <div class="row align-items-center">
+                <div class="col-lg-6 m-auto">
+                    <div class="card rounded-lg text-dark">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Register</h1>
+                            <p>
+                            If you already have an account please <a href="{% url 'users:login' %}">login</a>
+                            </p>
+                            <form class="login" method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button class="btn btn-danger btn-marketing btn-block rounded-pill mt-4" type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-waves text-dark">
     <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
         <defs>
             <style>
