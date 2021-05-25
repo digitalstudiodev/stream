@@ -10,17 +10,14 @@ Post
 <section class="bg-light py-10 mt-5">
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-xl-8">
+            <div class="col-lg-10 col-xl-10">
                 <form method="POST" class="uniForm" enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">New Blog Post</legend>
+                        <legend class="border-bottom mb-4">Blog Post</legend>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-8">
                                 {{ form.title|as_crispy_field }}
-                            </div>
-                            <div class="col-lg-6">
-                                {{ form.preview|as_crispy_field }}
                             </div>
                         </div>
                         <div class="row">
@@ -33,20 +30,27 @@ Post
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                {{ form.content|as_crispy_field }}
+                                {{ form.preview|as_crispy_field }}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label>Tags (Pick 3 Max)</label>
-                                {% for value in form.tag %}
-                                    <div class="form-check bg-dark text-white lift rounded-pill my-2 px-4 py-2 font-weight-bold">
-                                        <label class="form-check-label" for="gridCheck">
-                                            {{ value }}
-                                        </label>
-                                    </div>
-                                {% endfor %}
+                                {{ form.content|as_crispy_field }}
                             </div>
+                        </div>
+                        <div class="row">
+                            <label class="ml-5 mb-2">Select Tags (3 Max)</label>
+                        </div>
+                        <div class="row">
+                            {% for value in form.tag %}
+                            <div class="col-lg-4">
+                                <div class="form-check bg-dark text-white lift rounded-pill my-2 px-4 py-2 font-weight-bold">
+                                    <label class="form-check-label" for="gridCheck">
+                                        {{ value }}
+                                    </label>
+                                </div>
+                            </div>
+                            {% endfor %}
                         </div>
                     </fieldset>
                     <div class="form-group">
