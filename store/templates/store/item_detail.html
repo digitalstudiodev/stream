@@ -55,6 +55,7 @@
             <div class="col-md-4">
                 <h1 class="display-5 fw-bolder my-5">{{ object.title }}</h1>
                 {% if item.discount_price > 0 %}
+                <span class="text-yellow font-weight-bold">$ <del>{{ item.price }}</del></span>
                 <span class="text-green font-weight-bold">$ {{ item.discount_price }}</span>
                 {% else %}
                 <span class="text-green font-weight-bold">$ {{ item.price }}</span>
