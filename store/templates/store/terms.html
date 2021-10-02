@@ -1,0 +1,66 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-10 mt-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <h1>Terms of Service</h1>
+            <br>
+            <h3>Overview</h3>
+            <p>
+                This website is operated by Digital Studio Dev. Throughout the site, the terms “we”, “us” and “our” refer to the Digital Stream Store. Digital Stream Store offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
+            </p>
+            <p>
+                By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.
+            </p>
+            <p>
+                Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.
+            </p>
+            <p>
+                Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.
+            </p>
+            <h3>Refunds</h3>
+            <p>
+                Our policy lasts 14 days. If 14 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange.
+            </p>
+            <h3>Shipping</h3>
+            <p>
+                Upon completing your order, you will receive an email on the shipment of the item. Orders are shipped in the order they are received and take approximately 14 days to arrive.
+            </p>
+            <p>
+                To return your product, please contact us at support@digitalstudio.dev and we will let you know where to send the product.
+            </p>
+        </div>
+    </div>
+    <div class="svg-border-waves text-dark">
+        <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+            <defs>
+                <style>
+                    .a {
+                        fill: none;
+                    }
+                    .b {
+                        clip-path: url(#a);
+                    }
+                    .d {
+                        opacity: 0.5;
+                        isolation: isolate;
+                    }
+                </style>
+                <clippath id="a"><rect class="a" width="1920" height="75"></rect></clippath>
+            </defs>
+            <title>wave</title>
+            <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
+            <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
+            <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
+            <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
+        </svg>
+    </div>
+</section>
+{% endblock %}

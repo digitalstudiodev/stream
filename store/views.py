@@ -116,3 +116,6 @@ class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if item:
             return True
         return False
+
+def terms(request):
+    return render(request, 'store/terms.html')
