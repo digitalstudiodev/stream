@@ -72,7 +72,7 @@ def create_checkout_session(request, id):
 
 def success(request, item_id):
     item = Item.objects.get(pk=item_id)
-    item.inventory = 0
+    item.inventory = item.inventory - 1
     item.save()
     return render(request, 'store/success.html')
 
