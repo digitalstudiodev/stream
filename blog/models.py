@@ -16,6 +16,8 @@ TAG_OPTIONS = (
     ("AWS","AWS"),
     ("Heroku","Heroku"),
     ("Git","Git"),
+    ("Physics","Physics"),
+    ("Science","Science"),
 )
 
 
