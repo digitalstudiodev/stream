@@ -44,11 +44,11 @@
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item dropdown dropdown-xl no-caret">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="badge badge-pill badge-light tech-font">Blog</span>
-                                            <!--<i class="fas fa-chevron-right dropdown-arrow"></i>-->
+                                            Blog
+                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right animated--fade-in-up mr-lg-n15" aria-labelledby="navbarDropdownDemos">
-                                            <div class="row no-gutters">
+                                            <div class="container">
                                                 <div class="col-lg-4 p-lg-5">
                                                     <div class="row">
                                                         <div class="col-lg-6">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'store:store-home' %}"><span class="badge badge-pill badge-light tech-font">Store</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'store:store-home' %}">Shop</li>
                                     {% if user.is_authenticated %}
                                     <li class="nav-item"><a class="nav-link" href="{% url 'users:profile' %}">Profile</a></li>
                                     {% endif %}
