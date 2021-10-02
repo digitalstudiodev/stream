@@ -22,7 +22,7 @@ class ItemDetailView(DetailView):
 def create_checkout_session(request, id):
     item = Item.objects.get(pk=id)
     if request.method == 'GET':
-        domain_url = 'http://127.0.0.1:8000/store/'
+        domain_url = 'https://www.digitalstream.dev/store/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             # Create new Checkout Session for the order
