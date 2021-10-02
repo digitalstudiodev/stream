@@ -44,18 +44,11 @@
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item dropdown dropdown-xl no-caret">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="badge badge-pill badge-light">Blog</span>
-                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                            <span class="badge badge-pill badge-light tech-font">Blog</span>
+                                            <!--<i class="fas fa-chevron-right dropdown-arrow"></i>-->
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right animated--fade-in-up mr-lg-n15" aria-labelledby="navbarDropdownDemos">
                                             <div class="row no-gutters">
-                                                <div class="col-lg-8 p-lg-3 bg-img-cover overlay overlay-dark overlay-70 d-none d-lg-block" style='background-image: url("assets/img/newark.jpg")'>
-                                                    <div class="d-flex h-100 w-100 align-items-center justify-content-center">
-                                                        <div class="text-white text-center z-1">
-                                                            <a class="btn btn-white btn-sm text-dark rounded-pill" href="https://github.com/digitalstudiodev">View GitHub</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="col-lg-4 p-lg-5">
                                                     <div class="row">
                                                         <div class="col-lg-6">
@@ -68,7 +61,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'store:store-home' %}"><span class="badge badge-pill badge-light">Store</span></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'store:store-home' %}"><span class="badge badge-pill badge-light tech-font">Store</span></a></li>
                                     {% if user.is_authenticated %}
                                     <li class="nav-item"><a class="nav-link" href="{% url 'users:profile' %}">Profile</a></li>
                                     {% endif %}
