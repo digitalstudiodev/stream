@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG_VALUE')
+DEBUG = "True" #os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = ['https://studio-stream.herokuapp.com/','https://www.digitalstream.dev/']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
+    'store.apps.StoreConfig',
     'crispy_forms',
     'multiselectfield',
     'storages',
@@ -166,6 +167,11 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 SITE_ID = 1
+
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 
 django_heroku.settings(locals())
 ##Digital Studio
