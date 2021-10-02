@@ -65,12 +65,14 @@
                 <p class="content-markdown text-dark " ><strong>Description</strong> <br> {{ object.description }}</p>
                 <p class="content-markdown text-dark "><strong>Additional Information</strong> <br>  {{ object.additional_info }}</p>
                 {% if object.inventory > 0 %}
+                <p class="lead">Please review <a href="{% url 'store:terms' %}">Term of Service</a> before completing purchase</p>
                 <div class="d-flex">
                     <a class="btn btn-primary btn-marketing rounded-pill mt-4" href="{% url 'store:checkout' item.pk %}">
                         Buy Now!
                     </a>
                 </div>
                 {% else %}
+                
                 <div class="d-flex">
                     <a class="btn btn-dark btn-marketing rounded-pill mt-4" href="#">
                         Sold Out!
@@ -81,6 +83,7 @@
                 <a class="btn btn-primary btn-marketing rounded-pill mt-4" href="{% url 'store:item-update' object.id %}">Update</a>
                 <a class="btn btn-danger btn-marketing rounded-pill mt-4" href="{% url 'store:item-delete' object.id %}">Delete</a>
                 {% endif %}
+                
             </div>
         </div>
     </div>
