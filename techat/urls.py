@@ -40,6 +40,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-handler403 = views.invalid_error
-handler404 = views.invalid_error
-handler500 = views.invalid_view
+handler404 = 'techat.users.views.invalid_error'
+handler500 = 'techat.users.views.invalid_view'
