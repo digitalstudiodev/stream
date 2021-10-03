@@ -10,6 +10,9 @@
 <script src="https://js.stripe.com/v3/"></script>
 <section class="bg-light py-10 mt-5">
     <div class="container px-4 px-lg-5 my-5">
+      <div class="row">
+        <h1 class="mb-5 text-center display-3 font-weight-bold">{{ object.title }}</h1>
+      </div>
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-8">
                 <!--<img class="card-img-top mb-5 mb-md-0" src="{{ object.featured_image.url }}" alt="{{ object.title }} Featured Image" />-->
@@ -53,12 +56,12 @@
                   </div>
             </div>
             <div class="col-md-4">
-                <h1 class="display-5 fw-bolder my-5">{{ object.title }}</h1>
+                <!--<h1 class="display-5 fw-bolder my-5">{{ object.title }}</h1>-->
                 {% if item.discount_price > 0 %}
-                <span class="text-yellow font-weight-bold">$ <del>{{ item.price }}</del></span>
-                <span class="text-green font-weight-bold">$ {{ item.discount_price }}</span>
+                <h1 class="text-yellow font-weight-bold display-5 my-5">$ <del>{{ item.price }}</del></h1>
+                <h1 class="text-green font-weight-bold display-5 my-5">$ {{ item.discount_price }}</h1>
                 {% else %}
-                <span class="text-green font-weight-bold">$ {{ item.price }}</span>
+                <h1 class="text-green font-weight-bold display-5 my-5">$ {{ item.price }}</h1>
                 {% endif %}
                 <br>
                 <p class="lead">Available &nbsp;&nbsp;&nbsp; {{ object.inventory }}</p>
