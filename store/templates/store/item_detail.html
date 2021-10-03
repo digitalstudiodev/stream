@@ -60,12 +60,11 @@
             <div class="col-md-4">
                 <!--<h1 class="display-5 fw-bolder my-5">{{ object.title }}</h1>-->
                 {% if item.discount_price > 0 %}
-                <h1 class="text-yellow font-weight-bold display-5 my-5">$ <del>{{ item.price }}</del></h1>
-                <h1 class="text-green font-weight-bold display-5 my-5">$ {{ item.discount_price }}</h1>
+                <h1 class="text-yellow font-weight-bold display-5">$ <del>{{ item.price }}</del></h1>
+                <h1 class="text-green font-weight-bold display-5">$ {{ item.discount_price }}</h1>
                 {% else %}
-                <h1 class="text-green font-weight-bold display-5 my-5">$ {{ item.price }}</h1>
+                <h1 class="text-green font-weight-bold display-5">$ {{ item.price }}</h1>
                 {% endif %}
-                <br>
                 <p class="lead">Available &nbsp;&nbsp;&nbsp; {{ object.inventory }}</p>
                 <p class="content-markdown text-dark " ><strong>Description</strong> <br> {{ object.description }}</p>
                 <p class="content-markdown text-dark "><strong>Additional Information</strong> <br>  {{ object.additional_info }}</p>
