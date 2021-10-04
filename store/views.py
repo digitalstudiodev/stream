@@ -46,7 +46,7 @@ def create_checkout_session(request, id):
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.discount_price)*100 + int(item.discount_price*0.08)*100,
-                            'shipping_address_collection': {'US':'US'}
+                            'shipping_address_collection': 'US'
                         }
                     ]
                 )
@@ -62,7 +62,7 @@ def create_checkout_session(request, id):
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.price)*100 + int(item.price*0.08)*100,
-                            'shipping_address_collection': {'US':'US'}
+                            'shipping_address_collection': 'US'
                         }
                     ]
                 )
