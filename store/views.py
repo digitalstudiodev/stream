@@ -40,13 +40,16 @@ def create_checkout_session(request, id):
                     cancel_url=domain_url + 'cancelled/',
                     payment_method_types=['card'],
                     mode='payment',
+                    shipping_address_collection={
+                    'allowed_countries': ['US', 'CA'],
+                    },
                     line_items=[
                         {
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.discount_price)*100 + int(item.discount_price*0.08)*100,
-                            'shipping_address_collection': 'US'
+                            
                         }
                     ]
                 )
@@ -56,13 +59,16 @@ def create_checkout_session(request, id):
                     cancel_url=domain_url + 'cancelled/',
                     payment_method_types=['card'],
                     mode='payment',
+                    shipping_address_collection={
+                    'allowed_countries': ['US', 'CA'],
+                    },
                     line_items=[
                         {
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.price)*100 + int(item.price*0.08)*100,
-                            'shipping_address_collection': 'US'
+                            
                         }
                     ]
                 )
