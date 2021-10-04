@@ -49,7 +49,14 @@ def create_checkout_session(request, id):
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.discount_price)*100 + int(item.discount_price*0.08)*100,
-                            
+                            'images': [
+                                str(item.featured_image.url),
+                                str(item.sub_image1.url),
+                                str(item.sub_image2.url),
+                                str(item.sub_image3.url),
+                                str(item.sub_image4.url),
+                                str(item.sub_image5.url),
+                            ]
                         }
                     ]
                 )
@@ -68,7 +75,14 @@ def create_checkout_session(request, id):
                             'quantity': int(item.inventory),
                             'currency': 'usd',
                             'amount': int(item.price)*100 + int(item.price*0.08)*100,
-                            
+                            'images': [
+                                str(item.featured_image.url),
+                                str(item.sub_image1.url),
+                                str(item.sub_image2.url),
+                                str(item.sub_image3.url),
+                                str(item.sub_image4.url),
+                                str(item.sub_image5.url),
+                            ]
                         }
                     ]
                 )
