@@ -146,7 +146,7 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'techat.storage.S3Storage'
 
 #AWS Config Settings
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
