@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "wg4d3tffb6c3cfb67b6tb7rb6rrv5rv5rrvrv567b677t6bt6765d5vdb76utfg6hv7b"#os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False #os.environ.get('DEBUG')
@@ -165,9 +165,9 @@ CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
 
 #HSTS settings
-#SECURE_HSTS_SECONDS = 3153600 #1 year
-#SECURE_HSTS_PRELOAD = True
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 3153600 #1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 SITE_ID = 1
 
