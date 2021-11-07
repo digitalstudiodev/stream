@@ -74,7 +74,7 @@ def create_checkout_session(request, id):
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
-                            'amount': int(item.price)*100 + int(item.price*0.08)*100,
+                            'amount': int(item.price)*100 + int(item.price*0.02)*100,
                             'images': [
                                 str(item.featured_image.url),
                                 str(item.sub_image1.url),
