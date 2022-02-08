@@ -37,10 +37,10 @@ def create_checkout_session(request, id):
 
             # ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
             if item.discount_price > 0:
-                amount = int(item.discount_price)*100 + ceil(int(item.discount_price*0.02)*100)
+                amount = int(item.discount_price)*100 + int(ceil(item.discount_price*0.02*100))
                 checkout_session = stripe.checkout.Session.create(
                     success_url=domain_url + 'success/'+ str(id) + '/?session_id={CHECKOUT_SESSION_ID}',
-                    cancel_url=domain_url + 'cancelled/',
+                    cancel_url=domain_url + 'store/item/' + str(id) +"/",
                     payment_method_types=['card'],
                     mode='payment',
                     shipping_address_collection={
@@ -64,10 +64,10 @@ def create_checkout_session(request, id):
                     ]
                 )
             else:
-                amount = int(item.price)*100 + ceil(int(item.price*0.02)*100)
+                amount = int(item.price)*100 + int(ceil(item.price*0.02*100))
                 checkout_session = stripe.checkout.Session.create(
                     success_url=domain_url + 'success/'+ str(id) + '/?session_id={CHECKOUT_SESSION_ID}',
-                    cancel_url=domain_url + 'cancelled/',
+                    cancel_url=domain_url + 'store/item/' + str(id) +"/",
                     payment_method_types=['card'],
                     mode='payment',
                     shipping_address_collection={
