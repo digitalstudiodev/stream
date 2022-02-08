@@ -48,7 +48,7 @@ def create_checkout_session(request, id):
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
-                            'amount': int(item.discount_price)*100 + int(item.discount_price*0.02)*100,
+                            'amount': float(item.discount_price)*100 + float(item.discount_price*0.02)*100,
                             'images': [
                                 str(item.featured_image.url),
                                 str(item.sub_image1.url),
@@ -74,7 +74,7 @@ def create_checkout_session(request, id):
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
-                            'amount': int(item.price)*100 + int(item.price*0.02)*100,
+                            'amount': float(item.price)*100 + float(item.price*0.02)*100,
                             'images': [
                                 str(item.featured_image.url),
                                 str(item.sub_image1.url),
