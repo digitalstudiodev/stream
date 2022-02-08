@@ -1,3 +1,4 @@
+from math import ceil
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
@@ -21,6 +22,7 @@ class ItemDetailView(DetailView):
 @csrf_exempt
 def create_checkout_session(request, id):
     item = Item.objects.get(pk=id)
+    
     if request.method == 'GET':
         domain_url = 'https://www.digitalstream.dev/store/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -35,6 +37,7 @@ def create_checkout_session(request, id):
 
             # ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
             if item.discount_price > 0:
+                amount = int(item.discount_price)*100 + ceil(int(item.discount_price*0.02)*100)
                 checkout_session = stripe.checkout.Session.create(
                     success_url=domain_url + 'success/'+ str(id) + '/?session_id={CHECKOUT_SESSION_ID}',
                     cancel_url=domain_url + 'cancelled/',
@@ -48,7 +51,7 @@ def create_checkout_session(request, id):
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
-                            'amount': float(item.discount_price)*100 + float(item.discount_price*0.02)*100,
+                            'amount': amount,
                             'images': [
                                 str(item.featured_image.url),
                                 str(item.sub_image1.url),
@@ -61,6 +64,7 @@ def create_checkout_session(request, id):
                     ]
                 )
             else:
+                amount = int(item.price)*100 + ceil(int(item.price*0.02)*100)
                 checkout_session = stripe.checkout.Session.create(
                     success_url=domain_url + 'success/'+ str(id) + '/?session_id={CHECKOUT_SESSION_ID}',
                     cancel_url=domain_url + 'cancelled/',
@@ -74,7 +78,7 @@ def create_checkout_session(request, id):
                             'name': str(item.title),
                             'quantity': int(item.inventory),
                             'currency': 'usd',
-                            'amount': float(item.price)*100 + float(item.price*0.02)*100,
+                            'amount': amount,
                             'images': [
                                 str(item.featured_image.url),
                                 str(item.sub_image1.url),
