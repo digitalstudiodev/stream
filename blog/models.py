@@ -18,6 +18,7 @@ TAG_OPTIONS = (
     ("Git","Git"),
     ("Physics","Physics"),
     ("Science","Science"),
+    ("Case-Studies","Case-Studies"),
 )
 
 

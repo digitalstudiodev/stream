@@ -81,6 +81,15 @@ Feed
                 {% endif %}
             </div>
         </div>
+        {% if tags %}
+        <div class="row">
+            <div class="col-lg-12 mb-5">
+                {% for tag in tags %}
+                    <a href="{% url 'blog:posts-by-tag' tag %}" class="btn btn-dark text-white mb-2">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
         {% for post in posts %}
             {% for tag in post.tag %}
                 {% if tag == "Featured" %}
