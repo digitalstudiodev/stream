@@ -47,11 +47,11 @@
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
-                    <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-dark fixed-top">
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                         <div class="container">
                             <a class="navbar-brand text-white text-uppercase tech-font" href="{% url 'blog:home' %}">
-                                <span class="text-uppercase">Stream</span>
-                                <span class="badge badge-pill badge-light">Blog</span>
+                                <span class="text-uppercase text-gradient">Stream</span>
+                                <span class="badge badge-pill badge-dark">Blog</span>
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -89,61 +89,60 @@
                 </main>
             </div>
             <div id="layoutDefault_footer">
-                <footer class="footer pt-10 pb-5 mt-auto bg-dark footer-dark">
+                <footer class="footer pt-10 pb-5 mt-auto bg-white footer-white">
                     <div class="container">
                         <div class="row">
-                            
                             <div class="col-lg-3">
-                                <div class="footer-brand text-white text-uppercase tech-font">Stream&nbsp;<span class="badge badge-pill badge-light">Blog</span></a></div>
-                                <div class="mb-3">Sharing concepts, ideas, and code.</div>
+                                <div class="footer-brand text-uppercase tech-font"><span class="text-gradient">Stream</span>&nbsp;<span class="badge badge-pill badge-dark">Blog</span></a></div>
+                                <div class="mb-3 text-gradient">Sharing concepts, ideas, and code.</div>
                                 <div class="icon-list-social mb-5">
                                     <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
-                                        <i class="fab fa-instagram"></i>
+                                        <i class="fab fa-instagram text-dark"></i>
                                     </a>
                                     <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
-                                        <i class="fab fa-facebook"></i>
+                                        <i class="fab fa-facebook text-dark"></i>
                                     </a>
                                     <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
-                                        <i class="fab fa-github"></i>
+                                        <i class="fab fa-github text-dark"></i>
                                     </a>
                                     <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
-                                        <i class="fab fa-linkedin"></i>
+                                        <i class="fab fa-linkedin text-dark"></i>
                                     </a>
                                     <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
-                                        <i class="fab fa-medium"></i>
+                                        <i class="fab fa-medium text-dark"></i>
                                     </a>
                                     <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
-                                        <i class="fab fa-youtube"></i>
+                                        <i class="fab fa-youtube text-dark"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-9">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-6 ml-auto">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Stream</div>
+                                        <div class="text-uppercase-expanded text-xs mb-4 text-gradient">Stream</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="{% url 'blog:home' %}">Home</a></li>
-                                            <li class="mb-2"><a href="https://medium.com/digital-studio-stream">Medium</a></li>
-                                            <li class="mb-2"><a href="{% url 'store:store-home' %}">Shop</a></li>
-                                            <li class="mb-2"><a href="{% url 'store:terms' %}">Terms of Service</a></li>
+                                            <li class="mb-2"><a href="{% url 'blog:home' %}"><span class="text-gradient">Home</span></a></li>
+                                            <li class="mb-2"><a href="https://medium.com/digital-studio-stream"><span class="text-gradient">Medium</span></a></li>
+                                            <li class="mb-2"><a href="{% url 'store:store-home' %}"><span class="text-gradient">Shop</span></a></li>
+                                            <li class="mb-2"><a href="{% url 'store:terms' %}"><span class="text-gradient">Terms of Service</span></a></li>
                                         </ul>
-                                        <div class="text-uppercase-expanded text-xs my-4">Admin</div>
+                                        <div class="text-uppercase-expanded text-xs my-4 text-gradient">Admin</div>
                                         <ul class="list-unstyled mb-0">
                                             {% if request.user.is_authenticated %}
-                                                <li class="mb-4"><a href="{% url 'users:profile' %}">Profile</a></li>
-                                                <li class="mb-4"><a href="{% url 'users:logout' %}">Logout</a></li>
+                                                <li class="mb-4"><a href="{% url 'users:profile' %}"><span class="text-gradient">Profile</span></a></li>
+                                                <li class="mb-4"><a href="{% url 'users:logout' %}"><span class="text-gradient">Logout</span></a></li>
                                             {% else %}
-                                                <li class="mb-4"><a href="{% url 'users:login' %}">Login</a></li>
+                                                <li class="mb-4"><a href="{% url 'users:login' %}"><span class="text-gradient">Login</span></a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-md-6">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Digital Studio</div>
+                                        <div class="text-uppercase-expanded text-xs mb-4 text-gradient">Digital Studio</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="http://digitalstudio.dev">Home</a></li>
-                                            <li class="mb-2"><a href="http://digitalstudio.dev/about_us.html">About Us</a></li>
-                                            <li class="mb-2"><a href="http://digitalstudio.dev/workflow.html">How We Work</a></li>
-                                            <li class="mb-2"><a href="http://digitalstudio.dev/contact.html">Contact</a></li>
+                                            <li class="mb-2"><a href="http://digitalstudio.dev"><span class="text-gradient">Home</span></a></li>
+                                            <li class="mb-2"><a href="http://digitalstudio.dev/about_us.html"><span class="text-gradient">About Us</span></a></li>
+                                            <li class="mb-2"><a href="http://digitalstudio.dev/workflow.html"><span class="text-gradient">How We Work</span></a></li>
+                                            <li class="mb-2"><a href="http://digitalstudio.dev/contact.html"><span class="text-gradient">Contact</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
