@@ -12,7 +12,10 @@ from django import forms
 def feed(request):
     return redirect('blog:home')
 
-def josedom(request):
+def main(request):
+    return render(request, 'blog/jose-dom-index.html')
+
+def resume(request):
     return render(request, 'blog/jose-dom-index.html')
 
 class PostListView(ListView):

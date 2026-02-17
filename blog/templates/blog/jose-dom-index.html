@@ -25,13 +25,14 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-gradient">Jose R. Dominguez</span></a>
+                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder text-gradient">Jose R. Dominguez</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html"><span class="nav-text text-dark">Home</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html"><span class="nav-text text-dark">Resume</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html"><span class="nav-text text-dark">Contact</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:main' %}"><span class="nav-text text-dark">Home</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:resume' %}"><span class="nav-text text-dark">Resume</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="www.dominguezstudio.dev"><span class="nav-text text-dark">Dev Studio</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="nav-text text-dark">Contact</span></a></li>
                             <li class="nav-item">
                                 <div class="form-check form-switch mt-2">
                                     <label class="form-check-label" for="lightSwitch"> <span class="text-gradient">Dark Mode</span> </label>
@@ -245,7 +246,6 @@
         <footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Made by Jose R. Dominguez</div></div>
                     <div class="col-auto">
                         <a class="small" href="#!">Privacy</a>
                         <span class="mx-1">&middot;</span>

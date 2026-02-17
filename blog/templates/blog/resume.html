@@ -1,0 +1,411 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Jose Ramon Dominguez</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon-profile.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder text-gradient">Jose R. Dominguez</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:main' %}"><span class="nav-text text-dark">Home</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:resume' %}"><span class="nav-text text-dark">Resume</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="www.dominguezstudio.dev"><span class="nav-text text-dark">Dev Studio</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="nav-text text-dark">Contact</span></a></li>
+                            <li class="nav-item">
+                                <div class="form-check form-switch mt-2">
+                                    <label class="form-check-label" for="lightSwitch"> <span class="text-gradient">Dark Mode</span> </label>
+                                    <input class="form-check-input" type="checkbox" id="lightSwitch" />
+                                  </div>
+                                  
+                                <script src="{% static 'js/switch.js' %}"></script>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <!-- Experience Section-->
+                        <section>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h2 class="text-gradient fw-bolder mb-0">Experience</h2>
+                                <!-- Download resume button-->
+                                <!-- Note: Set the link href target to a PDF file within your project-->
+                                <a class="btn btn-primary px-4 py-3" href="https://drive.google.com/file/d/1gbT0KE1yoELIN--b7Fy9OPNQ4g8-ZczV/view">
+                                    <div class="d-inline-block bi bi-download me-2"></div>
+                                    Download Resume
+                                </a>
+                            </div>
+                            <div class="mb-4">
+                                <div class="btn-group" role="group" aria-label="Filter">
+                                    <button type="button" class="btn btn-outline-primary filter-btn" data-filter="project-management">Project Management</button>
+                                    <button type="button" class="btn btn-outline-primary filter-btn" data-filter="data-engineering">Data Engineering &amp; Analytics</button>
+                                    <button type="button" class="btn btn-outline-primary filter-btn" data-filter="research-entrepreneurship">Research &amp; Entrepreneurship</button>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="project-management">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2023 - Present</div>
+                                                <div class="small fw-bolder resume-text text-dark">Senior Project Administrator</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2"><a href="https://research.rutgers.edu/people/jose-dominguez">Office for Research, Technology Transfer</a></div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Piscataway, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Currently managing and supporting the <a href="https://www.inteum.com/minuet/">Inteum Database</a> for the Technology Transfer Office at Rutgers.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2022 - Present</div>
+                                                <div class="small fw-bolder resume-text text-dark">Research Associate</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2"><a href="https://new.nsf.gov/funding/opportunities/post-baccalaureate-research-experiences-lsamp">NSF PRELS</a>, <a href="https://sites.google.com/view/wulabrun/people">Wu Lab</a></div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Currently translating a Magnetic-Optical Trap Simulation written in MatLab to be in Python. <a href="https://github.com/jose-dom/atom-mot-sim">View Project</a>.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="project-management">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2019 - 2023</div>
+                                                <div class="small fw-bolder resume-text text-dark">User Support Services Specialist</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2">Office for Information Technology, Service Center</div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Transitioned Rutgers, Newark Campus, <a href="https://mytech.newark.rutgers.edu/">Technology Website</a> from Wordpress to Drupal CMS.</li>
+                                                    <li class="list-item resume-text text-dark">Developed <a href="https://mytech.newark.rutgers.edu/digitalfluency#:~:text=Augmented%20Reality%20Seminar">Augmented Reality Seminars</a> using iOS and Swift, while also creating an environment for Software Development among the Rutgers Community. <a href="https://github.com/runit109">View Github</a>.</li>
+                                                    <li class="list-item resume-text text-dark">Trained the Rutgers Community on how to use <a href="https://mytech.newark.rutgers.edu/digitalfluency#:~:text=Digital%20Fluency-,3D%20Printing,-A%20completion%20of">3D Printers</a> for research, course work, and even recreational activities.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2021 - 2022</div>
+                                                <div class="small fw-bolder resume-text text-dark">University Physics, Teaching Assistant</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2">Physics Department</div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Utilized the <a href="https://www.islephysics.net/?page_id=83">ISLE Teaching Strategy</a> to effectively teach and communicate physics concepts to undergraduates in lectures and focused group sessions.</li>
+                                                    <li class="list-item resume-text text-dark">Created an online <a href="https://www.physnotes.net">physics repository</a> that follows the ISLE practices for various physics and math concepts.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2021</div>
+                                                <div class="small fw-bolder resume-text text-dark">Statistics and Machine Learning, Teaching Assistant</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2">Computer Science Department, Data Science</div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Created and Managed the <a href="https://jose-dom.github.io/stats_ml_spring_2021/">course site</a>, grade and assist students with assignments, and demonstrate machine learning models as part of the lesson.</li>
+                                                    <li class="list-item resume-text text-dark">Presented my semester project for the course, which covered three different machine learning approaches to training a model for financial predictions, as an example for students when creating their projects. <a href="https://github.com/jose-dom/bitcoin_forecasting/blob/master/crypto_forecast.ipynb">View Project</a>. <a href="https://www.youtube.com/watch?v=58qj2DkD454">View Presentation</a>.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2020 - 2021</div>
+                                                <div class="small fw-bolder resume-text text-dark">Team Member</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2"><a href="https://new.nsf.gov/funding/initiatives/i-corps">NSF i-Corps</a>, <a href="https://www.zhuhlab.com/">Zhu Research Group</a></div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Hybrid</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Implemented outreach campaign to professionals in the field of Chemical Manufacturing with over 10 client interviews conducted for product feedback.</li>
+                                                    <li class="list-item resume-text text-dark">Communicated with clients to identify and formulate their requirements; customized product to ensure that it was in compliance with the clients' needs.</li>
+                                                    <li class="list-item resume-text text-dark">Attended various startup exhibitions and other events to present the product and company to potential customers, partners, and investors.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2019 - 2021</div>
+                                                <div class="small fw-bolder resume-text text-dark">Data Engineer</div>
+                                                <div class="small text-muted"><a href="https://jasfel.com/">Jasfel Analytics</a></div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Worked with Shop Newark Organization to understand business needs and convert payments system and integrate actionable reports through dashboards developed in Python. <a href="https://shopnewark-vendors.herokuapp.com/login/">View Project</a>.</li>
+                                                    <li class="list-item resume-text text-dark">Automated ETL processes across millions of rows of data for a Health Clinic Client which helped reduced workload by eliminating a manual data pull and integration.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2019</div>
+                                                <div class="small fw-bolder resume-text text-dark">Software Engineer, Internship</div>
+                                                <div class="small text-muted"><a href="https://jasfel.com/">Jasfel Analytics</a></div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Efficiently deployed <a href="https://github.com/jose-dom/regis">registration system</a> for Urban League of Essex County and integrated software engineered with team members and updated integration/deployment scripts to improve continuous integration practices.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Experience Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2018 - 2019</div>
+                                                <div class="small fw-bolder resume-text text-dark">Web Developer</div>
+                                                <div class="small text-muted">Rutgers University</div>
+                                                <div class="small text-muted py-2">GS-LSAMP</div>
+                                                <div class="small text-muted py-2"><i class="bi bi-geo"></i>Newark, New Jersey</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div>
+                                                <ul>
+                                                    <li class="list-item resume-text text-dark">Created and Managed the <a href="http://newark.gslsamp.rutgers.edu/">Rutgers Newark Alliance Site</a> and took over management of the General <a href="http://gslsamp.rutgers.edu/">Rutgers Alliance Site</a>.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Education Section-->
+                        <section>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h2 class="text-gradient fw-bolder mb-0">Education</h2>
+                            </div>
+                            <!-- Education Card -->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-primary fw-bolder mb-2">2022</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder resume-text text-dark">Rutgers University</div>
+                                                    <div class="small text-muted">Newark, New New Jersey</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-muted">Bachelor's Degree</div>
+                                                    <div class="small text-muted">Computer Science & Applied Physics</div>
+                                                    <div class="small text-muted">Concentrations in Data Science & Mathematics</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6"><div>
+                                            <ul>
+                                                <li class="list-item resume-text text-dark">Gained knowledge in software engineering and data science, which fostered the ability to build data-driven products and solve complex data problems.</li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h2 class="text-gradient fw-bolder mb-0">Publications</h2>
+                            </div>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col-lg-8">
+                                            <ul>
+                                                <li class="list-item"><a href="https://scholar.google.com/citations?user=2LTF6wkAAAAJ&hl=en">Google Scholar</a></li>
+                                                <li class="list-item"><a href="https://orcid.org/0009-0006-3753-2950">ORCID</a></li>
+                                                <li class="list-item"><a href="https://www.researchgate.net/profile/Jose-Dominguez-57">ResearchGate</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Divider-->
+                        <div class="pb-5"></div>
+                        <!-- Skills Section-->
+                        <section>
+                            <!-- Skillset Card-->
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <!-- Professional skills list-->
+                                    <div class="mb-5">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
+                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Software Development</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Statistical Analysis</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Web Development</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Data Engineering and Management</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Machine Learning Model Depolyment</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">App Development</div></div>
+                                        </div>
+                                    </div>
+                                    <!-- Languages list-->
+                                    <div class="mb-0">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
+                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages and Frameworks</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">HTML/CSS/SASS</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">JavaScript</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Dart/Flutter</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">React</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Node.js</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Java</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Springboard</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">SQL</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Postgresl</div></div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3">
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Python</div></div>
+                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Django</div></div>
+                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 resume-text text-dark">Flask</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Made by Jose R. Dominguez</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/switch.js"></script>
+    </body>
+</html>
