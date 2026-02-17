@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dominguez Dev Studio</title>
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+        <style>
+            .tech-font {
+                font-family: 'Share Tech Mono', monospace;
+            }
+        </style>
+        <!-- font awesome icons -->
+        <script src="https://kit.fontawesome.com/8c746061a5.js" crossorigin="anonymous"></script>
+        <script>
+            const checkbox = document.getElementById("checkbox")
+            checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark")
+            })
+        </script>
+    </head>
+    <body>
+        <div id="layoutDefault">
+            <div id="layoutDefault_content">
+                <main>
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
+                        <div class="container">
+                            <a class="navbar-brand text-gradient" href="{% url 'blog:services' %}">
+                                Services
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i data-feather="menu"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto mr-lg-5">
+                                    <!--<li class="nav-item"><a class="nav-link" href="{% url 'blog:services' %}">Home</a></li>
+
+
+                                    <li class="nav-item dropdown dropdown-xl no-caret">
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Who We Are
+                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right animated--fade-in-up mr-lg-n15" aria-labelledby="navbarDropdownDemos">
+                                            <div class="row no-gutters">
+                                                <div class="col-lg-8 p-lg-3 bg-img-cover overlay overlay-dark overlay-70 d-none d-lg-block" style='background-image: url("assets/img/about_us.jpeg")'>
+                                                </div>
+                                                <div class="col-lg-4 p-lg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <h6 class="dropdown-header text-dark">Who We Are</h6>
+                                                            <a class="dropdown-item" href="about_us.html">About Us</a>
+                                                            <a class="dropdown-item" href="workflow.html">How We Work</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>-->
+                                </ul>
+                                <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Page Header-->
+                    <header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url("assets/img/newark.jpg")'>
+                        <div class="page-header-ui-content">
+                            <div class="wrapper">
+                                <div class="track">
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Web & Mobile App Development</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Data Pipelines & Integrations</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">IT & Software Consulting</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Virtual & Augumented Reality</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Analytics & Machine Learning</div></div>
+                                    </div>
+                                    <!---->
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Business Development</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">MVP Development</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">E-Commerce</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">CMS</div></div>
+                                    </div>
+                                    <div class="badge-item">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white"><div class="text-uppercase">Salesforce</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container px-5 my-5">
+                                <div class="row gx-5 justify-content-center align-items-center">
+                                    <div class="col-lg-6 p-3" data-aos="fade-right">
+                                        <h1 class="page-header-ui-title display-2 font-weight-bold mt-2 mb-5 text-white">Software Done Right!</h1>
+                                        <div class="icon-list-social mb-5 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                                            <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
+                                                <i class="fab fa-instagram" style="color: white !important;"></i>
+                                            </a>
+                                            <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
+                                                <i class="fab fa-facebook" style="color: white !important;"></i>
+                                            </a>
+                                            <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
+                                                <i class="fab fa-github" style="color: white !important;"></i>
+                                            </a>
+                                            <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
+                                                <i class="fab fa-linkedin" style="color: white !important;"></i>
+                                            </a>
+                                            <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
+                                                <i class="fab fa-medium" style="color: white !important;"></i>
+                                            </a>
+                                            <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
+                                                <i class="fab fa-youtube" style="color: white !important;"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 z-1" data-aos="fade-left">
+                                        <div class="card rounded-3 text-dark">
+                                            <div class="card-header py-4 text-black">Need a Custom Software? Tell us about Your project</div>
+                                            <div class="card-body">
+                                                <form action="https://formspree.io/f/xwkzyyvz" method="POST">
+                                                    <div class="row gx-5 mb-3">
+                                                        <div class="col-md-6">
+                                                            <label class="small text-gray-600" for="leadCapFirstName">First Name</label>
+                                                            <input class="form-control" id="leadCapFirstName" type="text" name="first_name" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="small text-gray-600" for="leadCapLastName">Last Name</label>
+                                                            <input class="form-control" id="leadCapLastName" type="text" name="last_name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="small text-gray-600" for="leadCapEmail">Email address</label>
+                                                        <input class="form-control" id="leadCapEmail" type="email" name="email" />
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="small text-gray-600" for="leadCapCompany">Company or Organization</label>
+                                                        <input class="form-control" id="leadCapCompany" type="text" name="company" />
+                                                    </div>
+                                                    <div class="d-grid"><button class="btn btn-primary fw-500 btn-marketing" type="submit">Let's Connect</button></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--
+                        <div class="svg-border-waves text-light">
+                            <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+                                <defs>
+                                    <style>
+                                        .a {
+                                            fill: none;
+                                        }
+                                        .b {
+                                            clip-path: url(#a);
+                                        }
+                                        .d {
+                                            opacity: 0.5;
+                                            isolation: isolate;
+                                        }
+                                    </style>
+                                </defs>
+                                <clippath id="a"><rect class="a" width="1920" height="75"></rect></clippath>
+                                <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
+                                <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
+                                <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
+                                <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
+                            </svg>
+                        </div>
+                    -->
+                    </header>
+                    <!-- Services -->
+                    <section class="bg-light">
+                        <div class="waves">
+                            <div class="wave" id="wave1">
+        
+                            </div>
+                            <div class="wave" id="wave2">
+                                
+                            </div>
+                            <div class="wave" id="wave3">
+                                
+                            </div>
+                            <div class="wave" id="wave4">
+                                
+                            </div>
+                        </div>
+                        <div class="container px-5">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-xxl-8">
+                                    <div class="text-center my-5">
+                                        <h2 class="display-3 fw-bolder"><span class="text-gradient font-weight-bold d-inline">We Provide Agile Software Development Services</span></h2>
+                                        <p class="lead text-primary mb-4 display-7 py-5">Based on many years of experience, we know that every business has a different software and hardware environment. That is why we provide a wide range of software development services. Check out the key services below.</p>
+                                        <div class="d-flex justify-content-center fs-2 gap-4">
+                                            <a class="text-gradient" href="https://www.instagram.com/josedom000/"><i class="bi bi-instagram"></i></a>
+                                            <a class="text-gradient" href="https://www.linkedin.com/in/josedom/"><i class="bi bi-linkedin"></i></a>
+                                            <a class="text-gradient" href="https://github.com/jose-dom"><i class="bi bi-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gx-5 mb-n10 z-1">
+                                <div class="col-lg-6 mb-5">
+                                    <div class="card h-100">
+                                        <div class="card-body p-5">
+                                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                    <path fill="white" d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416H576c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
+                                                </svg>
+                                            </div>
+                                            <h5 class="font-weight-bold text-gradient">Custom Software development</h5>
+                                            <p class="card-text">We convert your idea into solid, safe, and reliable custom software with our full-cycle software development services, including:</p>
+                                            <ul>
+                                                <li>Web App Solution for Browser</li>
+                                                <li>Native Desktop Solution for MacOS and Windows</li>
+                                                <li>Mobile App Solution iOS and Android</li>
+                                                <li>UI/UX</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-5">
+                                    <div class="card h-100">
+                                        <div class="card-body p-5">
+                                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                    <path fill="white" d="M80 0C44.7 0 16 28.7 16 64V448c0 35.3 28.7 64 64 64H304c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H80zm80 432h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H160c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+                                                </svg>
+                                            </div>
+                                            <h5 class="font-weight-bold text-gradient">Mobile App Development Services</h5>
+                                            <p class="card-text">Our team can provide support at any stage of custom mobile app development, from creating a proof-of-concept app to an MVP:</p>
+                                            <ul>
+                                                <li>Cross-platform apps for iOS and Android</li>
+                                                <li>Hybrid and mobile web</li>
+                                                <li>Native apps development</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-5 mb-lg-0">
+                                    <div class="card h-100">
+                                        <div class="card-body p-5">
+                                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                    <path fill="white" d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/>
+                                                </svg>
+                                            </div>
+                                            <h5 class="font-weight-bold text-gradient">IT & Software Consulting</h5>
+                                            <p class="card-text">Our team covers all IT strategies and provides IT consulting services that help optimize your business and make it grow:</p>
+                                            <ul>
+                                                <li>System integration</li>
+                                                <li>Data analytics</li>
+                                                <li>Internet of Things</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card h-100">
+                                        <div class="card-body p-5">
+                                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                    <path fill="white" d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/>
+                                                </svg>
+                                            </div>
+                                            <h5 class="font-weight-bold text-gradient">Software Integration</h5>
+                                            <p class="card-text">We connect IT systems, microservices & migrate data, including cloud-based data, from one database to another by providing:</p>
+                                            <ul>
+                                                <li>Data integration</li>
+                                                <li>API integration</li>
+                                                <li>Service-oriented architecture (SOA)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Workflow -->
+                    <section class="bg-img-cover overlay overlay-dark overlay-80 py-15" style="background-image: url('assets/img/workflow.jpeg')">
+                        <div class="container px-5 z-1">
+                            <div class="mt-5">
+                                <h1 class="mb-3 m-auto font-weight-bold text-center" style="color: white !important; font-size: xxx-large; overflow: inherit;">Our Software Development Cycle</h1>
+                                <p class="p-5 fade-up bg-transparent" style="color: white !important;">
+                                    We apply a systematic approach to complex and simple projects. We follow Agile methodology, Scrum and Kanban, which allow our dedicated team to deliver exceptional apps on time.
+                                </p>
+                                <div class="row py-5" style="overflow: auto;">
+                                    <div class="container d-flex">
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H288V352c0-17.7 14.3-32 32-32h80V96c0-8.8-7.2-16-16-16H64zM288 480H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V320v5.5c0 17-6.7 33.3-18.7 45.3l-90.5 90.5c-12 12-28.3 18.7-45.3 18.7H288z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Plan</h3>
+                                                    <p class="m-0 p-0 text-gradient font-weight-bold" style="font-size: small;">Discover and Define</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Design</h3>
+                                                    <p class="m-0 p-0 text-gradient text-gradient font-weight-bold" style="font-size: small;">Create Visuals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M240.8 4.8C250.3 10.6 256 20.9 256 32v72h89c3.6-13.8 16.1-24 31-24h88c26.5 0 48 21.5 48 48s-21.5 48-48 48H376c-14.9 0-27.4-10.2-31-24H256v72c0 11.1-5.7 21.4-15.2 27.2s-21.2 6.4-31.1 1.4l-192-96C6.8 151.2 0 140.1 0 128s6.8-23.2 17.7-28.6l192-96c9.9-5 21.7-4.4 31.1 1.4zM288 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32V256zM32 384h96c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32zm192 0H480c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Build</h3>
+                                                    <p class="m-0 p-0 text-gradient font-weight-bold" style="font-size: small;">Develop and Construct</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M175 389.4c-9.8 16-15 34.3-15 53.1c-10 3.5-20.8 5.5-32 5.5c-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0H96h64 64c17.7 0 32 14.3 32 32s-14.3 32-32 32V309.9l-49 79.6zM96 64v96h64V64H96zM352 0H480h32c17.7 0 32 14.3 32 32s-14.3 32-32 32V214.9L629.7 406.2c6.7 10.9 10.3 23.5 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4c0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64V224c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64H384z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Beta</h3>
+                                                    <p class="m-0 p-0 text-gradient font-weight-bold" style="font-size: small;">Test and Train</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Launch</h3>
+                                                    <p class="m-0 p-0 text-gradient font-weight-bold" style="font-size: small;">Optimize and Go Live</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card px-3 py-5">
+                                                <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-black mb-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path fill="white" d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="text-gradient font-weight-bold">Support</h3>
+                                                    <p class="m-0 p-0 text-gradient font-weight-bold" style="font-size: small;">Monitor, Evaluate, and Refine</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Work Stats -->
+                    <section class="bg-gradient-primary-to-secondary py-10 text-white">
+                        <div class="container px-5">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-lg-10">
+                                    <div class="text-center mb-10">
+                                        <h2 class="text-white display-3">Why should you choose us as your Software development company?</h2>
+                                        <p class="lead">Dominguez Dev Studio is a custom software development company with years of experience in the industry. We have implemented multiple completed projects, which means that customers trust us to launch their products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gx-5">
+                                <div class="col-lg-4 text-center mb-5">
+                                    <div class="display-1 fw-700 text-white-400">20+</div>
+                                    <div class="h5 text-white">Released Projects</div>
+                                    <p>We have released multiple small and complex projects through our development workflow to production for various clients.</p>
+                                </div>
+                                <div class="col-lg-4 text-center mb-5">
+                                    <div class="display-1 fw-700 text-white-400">15+</div>
+                                    <div class="h5 text-white">Clients Across U.S</div>
+                                    <p>We help our Clients through building applications for their business and supporting them all across the nation.</p>
+                                </div>
+                                <div class="col-lg-4 text-center mb-5">
+                                    <div class="display-1 fw-700 text-white-400">1-on-1</div>
+                                    <div class="h5 text-white">Direct Relationship</div>
+                                    <p>Our team works directly with our Clients to follow our development workflow to ensure application quality and customer service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    <!--
+                        <div class="svg-border-waves text-white">
+                            <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+                                <defs>
+                                    <style>
+                                        .a {
+                                            fill: none;
+                                        }
+                                        .b {
+                                            clip-path: url(#a);
+                                        }
+                                        .d {
+                                            opacity: 0.5;
+                                            isolation: isolate;
+                                        }
+                                    </style>
+                                    <clippath id="a"><rect class="a" width="1920" height="75"></rect></clippath>
+                                </defs>
+                                <title>wave</title>
+                                <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
+                                <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
+                                <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
+                                <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
+                            </svg>
+                        </div>
+                    -->
+                    
+                    </section>
+                </main>
+            </div>
+            <!-- Footer -->
+            <div id="layoutDefault_footer">
+                <footer class="footer pb-5 mt-auto bg-white footer-white">
+                    <div class="waves-white">
+                        <div class="wave-white" id="wave1white">
+    
+                        </div>
+                        <div class="wave-white" id="wave2white">
+                            
+                        </div>
+                        <div class="wave-white" id="wave3white">
+                            
+                        </div>
+                        <div class="wave-white" id="wave4white">
+                            
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row py-5">
+                            <div class="col-lg-3">
+                                <div class="footer-brand text-gradient">Dominguez Dev Studio</a></div>
+                                <div class="mb-3 text-gradient">Software Done Right!</div>
+                                <div class="icon-list-social mb-5  text-gradient">
+                                    <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
+                                        <i class="fab fa-instagram text-dark"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
+                                        <i class="fab fa-facebook text-dark"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
+                                        <i class="fab fa-github text-dark"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
+                                        <i class="fab fa-linkedin text-dark"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
+                                        <i class="fab fa-medium text-dark"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
+                                        <i class="fab fa-youtube text-dark"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="row">
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-5" />
+                        <div class="row align-items-center">
+                            <div class="col-md-6 small">Copyright &copy; <a href="{% url 'blog:content' %}">Jose Dominguez</a> 2020</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                disable: 'mobile',
+                duration: 600,
+                once: true
+            });
+        </script>
+        <!--tidio chat-->
+        <!--<script src="//code.tidio.co/qzfkiwrck3nn8mca1plltw5if2pn1wau.js" async></script>-->
+    
+    </body>
+</html>
