@@ -16,7 +16,7 @@ def main(request):
     return render(request, 'blog/jose-dom-index.html')
 
 def resume(request):
-    return render(request, 'blog/jose-dom-index.html')
+    return render(request, 'blog/resume.html')
 
 class PostListView(ListView):
     model = Post
