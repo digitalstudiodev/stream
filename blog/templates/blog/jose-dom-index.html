@@ -82,11 +82,24 @@
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
                                     <img class="profile-img img-fluid" src="{% static 'assets/profile2.2.png' %}" alt="..." />
-                                    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+                                    <div class='LI-profile-badge'
+  data-version='v1'
+  data-size='medium'
+  data-locale='en_US'
+  data-type='horizontal'
+  data-theme='dark'
+  data-vanity='josedom'>
+  <a
+    class='LI-simple-link'
+    href='https://in.linkedin.com/in/josedom?trk=profile-badge'>
+    Jose Dominguez
+  </a>
+</div>
 
-                                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="cubela" data-version="v1">
-                                        <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/josedom?trk=profile-badge">Jose Dominguez</a>
-                                    </div>
+ <script type='text/javascript'
+  src='https://platform.linkedin.com/badges/js/profile.js'
+  async
+  defer></script>
                                 </div>
                             </div>  
                         </div>
