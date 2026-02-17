@@ -27,8 +27,27 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:main' %}"><span class="nav-text text-dark">Home</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'blog:resume' %}"><span class="nav-text text-dark">Resume</span></a></li>
+                            <li class="nav-item dropdown dropdown-xl no-caret">
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Dev Studio
+                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right animated--fade-in-up mr-lg-n15" aria-labelledby="navbarDropdownDemos">
+                                            <div class="row no-gutters">
+                                                <div class="col-lg-8 p-lg-3 bg-img-cover overlay overlay-dark overlay-70 d-none d-lg-block" style='background-image: url("{% static "assets/img/about_us.jpeg" %}")'>
+                                                </div>
+                                                <div class="col-lg-4 p-lg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <h6 class="dropdown-header text-dark">Dev Studio</h6>
+                                                            <a class="dropdown-item" href="{% url 'blog:services' %}">Services</a>
+                                                            <a class="dropdown-item" href="{% url 'blog:content' %}">Content</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                             <li class="nav-item"><a class="nav-link" href="{% url 'blog:services' %}"><span class="nav-text text-dark">Services</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'blog:content' %}"><span class="nav-text text-dark">Content</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><span class="nav-text text-dark">Contact</span></a></li>
