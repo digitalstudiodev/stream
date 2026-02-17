@@ -9,8 +9,8 @@ from .models import Post
 from django import forms
 
 
-def feed(request):
-    return redirect('blog:home')
+def services(request):
+    return render(request, 'blog/services.html')
 
 def main(request):
     return render(request, 'blog/jose-dom-index.html')
