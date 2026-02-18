@@ -73,7 +73,6 @@
                         <div class="col-xxl-5">
                             <!-- Header text content-->
                             <div class="text-center text-xxl-start py-5">
-                                <div class="fs-2 fw-dark text-muted">Data Professional and aspiring Research Scientist with a focus on</div>
                                 <h1 class="display-2 fw-bolder mb-5"><span class="text-gradient d-inline" id="headerText"></span></h1>
                             </div>
                         </div>
@@ -83,15 +82,7 @@
                                 <div class="profile">
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                    <!--<img class="profile-img img-fluid" src="{% static 'assets/profile2.2.png' %}" alt="..." />
-                                    
-                                     bg-gradient-primary-to-secondary
-                                     -->
-                                    <div class='LI-profile-badge' data-version='v1' data-size='large' data-locale='en_US' data-type='horizontal' data-theme='dark' data-vanity='josedom'>
-                                        <a class='LI-simple-link' href='https://in.linkedin.com/in/josedom?trk=profile-badge'></a>
-                                    </div>
-
-                                    
+                                    <img class="profile-img img-fluid" src="{% static 'assets/profile2.2.png' %}" alt="..." />
                                 </div>
                             </div>  
                         </div>
@@ -203,12 +194,17 @@
                 <div class="container px-5">
                     <!-- Contact form-->
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-                        <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder text-gradient">Let's Get Started</h1>
-                            <!--<p class="lead fw-normal text-muted mb-0">
-                                Interested in collaboration, let's discuss your project.
-                            </p>-->
+                        <div class="row gx-5 justify-content-center mb-5">
+                            <div class='LI-profile-badge' data-version='v1' data-size='medium' data-locale='en_US' data-type='horizontal' data-theme='dark' data-vanity='josedom'>
+                                <a class='LI-simple-link' href='https://in.linkedin.com/in/josedom?trk=profile-badge'></a>
+                                </div>
+                            <div class="text-center mb-5">
+                                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                                <h1 class="fw-bolder text-gradient">Let's Get Started</h1>
+                                <!--<p class="lead fw-normal text-muted mb-0">
+                                    Interested in collaboration, let's discuss your project.
+                                </p>-->
+                            </div>
                         </div>
                         <div class="row gx-5 justify-content-center mb-5">
                             <div class="col-lg-8 col-xl-6">
@@ -289,8 +285,8 @@
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
         <script>
             let typingText = new Typed("#headerText",{
-                strings : ["Quantum Physics Research", "Machine Learning", 
-                            "Building Applications"],
+                strings : ["Data Engineering", "Analtyics and Visualization", "Scientific Research",
+                            "Application Development", "Business Development", "Research Commericalization", "IT Consulting",],
                 loop : true,
                 typeSpeed : 50,
                 backSpeed : 50,
