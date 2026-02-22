@@ -11,98 +11,92 @@ Feed
 {% endblock nav %}
 
 {% block content %}
-<header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/shop.jpeg" %})'>
-    <div class="page-header-content">
-        <div class="page-header-ui-content">
-                            <div class="container px-5 my-5">
-                                <div class="row gx-5 justify-content-center align-items-center">
-                                    <div class="col-lg-12 p-3" data-aos="fade-right">
-                                        
-                                        
-                                        <div class="icon-list-social mb-5 mx-auto" data-aos="fade-up" data-aos-delay="100">
-                                            <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
-                                                <i class="fab fa-instagram" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
-                                                <i class="fab fa-facebook" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
-                                                <i class="fab fa-github" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
-                                                <i class="fab fa-linkedin" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
-                                                <i class="fab fa-medium" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
-                                                <i class="fab fa-youtube" style="color: white !important;"></i>
-                                            </a>
+<section class="py-10 mt-10">
+                        <div class="container px-5">
+                            <div class="row gx-5 mb-5">
+                                <div class="col-lg-12">
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                {% for item in items %}
+                                <div class="col-lg-4 mb-5">
+                                    <a class="card lift h-100" href="{% url 'store:item-detail' item.id %}">
+                                        <img class="card-img-top" src="{{ item.featured_image.url }}" alt="{{ item.title }} Featured Image" />
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-2">{{ item.title }}</h4>
+                                            <p class="card-text">{{ item.get_shorten_description }}</p>
                                         </div>
+                                        <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
+                                            <div class="small text-primary">See more</div>
+                                            <div class="small text-primary"><i data-feather="arrow-right"></i></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination pagination-blog justify-content-center">
+                                    {% if is_paginated %}
+                                        {% if page_obj.has_previous %}
+                                            <li class="page-item">
+                                                <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                                            </li>
+                                        {% endif %}
+                                        {% for num in page_obj.paginator.page_range %}
+                                            {% if page_obj.number == num %}
+                                                <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
+                                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                                <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if page_obj.has_next %}
+                                            <li class="page-item">
+                                                <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                            </li>
+                                        {% endif %}
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <section class="py-10">
+                        <div class="container px-5">
+                            <div class="row gx-5">
+                                <div class="col-lg-6 mb-5 mb-lg-0 divider-right">
+                                    <div class="testimonial p-lg-5">
+                                        <div class="mb-3 text-yellow">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="testimonial-quote text-primary">"I was impressed with how beautiful and clean this property was. The owner definitely goes the extra mile to help their guests!"</p>
+                                        <div class="testimonial-name">Adam Hall</div>
+                                        <div class="testimonial-position">Lisbon, Portugal</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="testimonial p-lg-5">
+                                        <div class="mb-3 text-yellow">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="testimonial-quote text-primary">"Amazing location, convenient parking, and a lots of amenities and extras. I will definitely be returning here whenever I'm in town."</p>
+                                        <div class="testimonial-name">Lia Peterson</div>
+                                        <div class="testimonial-position">Sacramento, CA, USA</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-    </div>
-    <div class="svg-border-rounded text-light">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
-</header>
-<section class="bg-light py-10">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            {% for item in items %}
-            <div class="col-xl-4 mb-5">
-                <a class="card post-preview lift h-auto" href="{% url 'store:item-detail' item.id %}">
-                    <img class="card-img-top" src="{{ item.featured_image.url }}" alt="{{ item.title }} Featured Image" />
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">{{ item.title }}</h5>
-                        <p class="card-text">{{ item.get_shorten_description }}</p>
-                        {% if item.discount_price > 0 %}
-                        <span class="text-yellow font-weight-bold">$ <del>{{ item.price }}</del></span>
-                        <span class="text-green font-weight-bold">$ {{ item.discount_price }}</span>
-                        {% else %}
-                        <span class="text-green font-weight-bold">$ {{ item.price }}</span>
-                        {% endif %}
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-blog justify-content-center">
-                {% if is_paginated %}
-                    {% if page_obj.has_previous %}
-                        <li class="page-item">
-                            <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
-                        </li>
-                    {% endif %}
-                    {% for num in page_obj.paginator.page_range %}
-                        {% if page_obj.number == num %}
-                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
-                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    {% if page_obj.has_next %}
-                        <li class="page-item">
-                            <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
-                        </li>
-                    {% endif %}
-                {% endif %}
-            </ul>
-        </nav>
-    </div>
-</section>
+                    </section>
+                    <hr class="my-0" />
 {% endblock content %}

@@ -11,142 +11,147 @@ Feed
 {% endblock nav %}
 
 {% block content %}
-<header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/code_header.jpeg" %})'>
-    <div class="page-header-content">
-        <div class="container">
-            {% for post in posts %}
-            {% for tag in post.tag %}
-                {% if tag == "Featured" %}
-                <a class="card post-preview post-preview-featured lift mb-5" href="{% url 'blog:post-detail' post.id %}">
-                    <div class="row no-gutters">
-                        <div class="col-lg-5">
-                            <div class="post-preview-featured-img" style="background-image: url({{ post.featured_image.url }});"></div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="card-body">
-                                <div class="py-5">
-                                    <h5 class="card-title mb-3">{{ post.title }}</h5>
-                                    <p class="card-text">{{ post.get_shorten_preview }}</p>
+                        <div class="container px-5 mt-10">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="mb-0">
+                                    <span class="text-gradient">Featured</span>
+                                </h6>
+                                <div>
+                                    <!--<a class="text-arrow-icon small" href="#!">
+                                        More headlines
+                                        <i data-feather="arrow-right"></i>
+                                    </a>-->
                                 </div>
-                                <hr />
-                                <div class="post-preview-meta">
-                                    <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
-                                    <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
-                                    <div class="post-preview-meta-details">
-                                        <div class="post-preview-meta-details-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
-                                        <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; {{ post.read_time }} minutes</div>
+                            </div>
+                            <hr class="mb-4" />
+                            {% for post in posts %}
+                                {% for tag in post.tag %}
+                                    {% if tag == "Featured" %}
+                            <div class="card mb-4">
+                                <div class="card-body p-0">
+                                    <div class="row g-0">
+                                        <div class="col-lg-6 p-5">
+                                            <a class="badge badge-marketing bg-primary-soft rounded-pill text-primary mb-3" href="{% url 'blog:post-detail' post.id %}">{{ post.get_tag_display }}</a>
+                                            <a class="text-dark" href="{% url 'blog:post-detail' post.id %}"><h1>{{ post.title }}</h1></a>
+                                            <p class="text-dark">{{ post.get_shorten_preview }}</p>
+                                            <a class="text-arrow-icon small" href="{% url 'blog:post-detail' post.id %}">
+                                                Read more
+                                                <i data-feather="arrow-right"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 align-self-stretch bg-img-cover d-none d-lg-flex" style="background-image: url({{ post.featured_image.url }})"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="text-gradient">Recent</span>
+                                <!--<div>
+                                    <a class="text-arrow-icon small" href="#!">
+                                        View more
+                                        <i data-feather="arrow-right"></i>
+                                    </a>
+                                </div>-->
+                            </div>
+                            <hr class="mb-4" />
+                            <div class="row gx-5 py-5">
+                                <div class="col-lg-7 col-xl-8">
+                                    {% for post in posts %}
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <a class="text-dark" href="{% url 'blog:post-detail' post.id %}"><h5 class="mt-0">{{ post.title }}</h5></a>
+                                            <p>{{ post.get_shorten_preview }}</p>
+                                            <a class="text-arrow-icon small" href="{% url 'blog:post-detail' post.id %}">
+                                                Read more
+                                                <i data-feather="arrow-right"></i>
+                                            </a>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-4"><img class="align-self-start rounded shadow media-img" src="{{ post.featured_image.url }}" alt="..." /></div>
+                                    </div>
+                                    <hr class="my-4" />
+                                    {% endfor %}
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination pagination-blog justify-content-center">
+                                            {% if is_paginated %}
+                                                {% if page_obj.has_previous %}
+                                                    <li class="page-item">
+                                                        <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                                                    </li>
+                                                {% endif %}
+                                                {% for num in page_obj.paginator.page_range %}
+                                                    {% if page_obj.number == num %}
+                                                        <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
+                                                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                                        <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% if page_obj.has_next %}
+                                                    <li class="page-item">
+                                                        <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endif %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="col-lg-5 col-xl-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6>Categories</h6>
+                                            <hr />
+                                            {% if tags %}
+                                                    {% for tag in tags %}
+                                            <a href="{% url 'blog:posts-by-tag' tag %}" class="text-dark m-2">{{ tag }}</a>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-10">
+                                <div class="card-body p-5">
+                                    <div class="row gx-5 align-items-center">
+                                        <div class="col-lg-6">
+                                            <h4>Get the latest news</h4>
+                                            <div data-aos="fade-up">
+                                                    <div class="justify-content-center m-auto">
+                                                        
+                                                        <div class="icon-list-social">
+                                                            <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
+                                                                <i class="fab fa-instagram text-light"></i>
+                                                            </a>
+                                                            <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
+                                                                <i class="fab fa-facebook text-light"></i>
+                                                            </a>
+                                                            <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
+                                                                <i class="fab fa-github text-light"></i>
+                                                            </a>
+                                                            <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
+                                                                <i class="fab fa-linkedin text-light"></i>
+                                                            </a>
+                                                            <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
+                                                                <i class="fab fa-medium text-light"></i>
+                                                            </a>
+                                                            <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
+                                                                <i class="fab fa-youtube text-light"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <p class="lead text-gray-500 mb-0">Stay in the loop with the latest stories and breaking headlines!</p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="input-group mb-2">
+                                                <input class="form-control form-control-solid" type="text" placeholder="youremail@example.com" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                                <button class="btn btn-primary" id="button-addon2" type="button">Sign up</button>
+                                            </div>
+                                            <div class="small text-gray-500">You can unsubscribe at any time.</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-        {% if tags %}
-        <div class="row">
-            <div class="col-lg-12 mb-5">
-                {% for tag in tags %}
-                    <a href="{% url 'blog:posts-by-tag' tag %}" class="btn bg-white text-dark mb-2">{{ tag }}</a>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10 text-center m-auto align-items-center">
-                    <div data-aos="fade-up">
-                        <div class="row justify-content-center m-auto">
-                            
-                            <div class="icon-list-social mb-5">
-                                <a class="icon-list-social-link text-white" href="https://www.instagram.com/digitalstudio.dev/">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.facebook.com/digitalstudio.dev/">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://github.com/digitalstudiodev">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.linkedin.com/company/digitalstudio-dev/">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://medium.com/digital-studio-stream">
-                                    <i class="fab fa-medium"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="svg-border-rounded text-light">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
-</header>
-<section class="bg-light py-10">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{  message.tags }} my-5" style="border-radius: 2rem;">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            {% for post in posts %}
-            <div class="col-xl-4 mb-5">
-                <a class="card post-preview lift h-auto" href="{% url 'blog:post-detail' post.id %}">
-                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Featured Image" />
-                    <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">{{ post.get_tag_display }}</div>
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.get_shorten_preview }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-preview-meta">
-                            <img class="post-preview-meta-img" src="{{ post.author.profile.image.url }}" />
-                            <div class="post-preview-meta-details">
-                                <div class="post-preview-meta-details-name">{{ post.author.first_name }}</div>
-                                <div class="post-preview-meta-details-date">{{ post.date_posted }} &middot; Read Time ~ {{ post.read_time }} minutes</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-blog justify-content-center">
-                {% if is_paginated %}
-                    {% if page_obj.has_previous %}
-                        <li class="page-item">
-                            <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
-                        </li>
-                    {% endif %}
-                    {% for num in page_obj.paginator.page_range %}
-                        {% if page_obj.number == num %}
-                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
-                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ num }}">{{ num }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    {% if page_obj.has_next %}
-                        <li class="page-item">
-                            <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
-                        </li>
-                    {% endif %}
-                {% endif %}
-            </ul>
-        </nav>
-    </div>
-</section>
+
 {% endblock content %}
