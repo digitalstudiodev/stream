@@ -7,6 +7,84 @@ Post
 {% endblock title %}
 
 {% block content %}
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+document.getElementById("id_content").required = false;
+window.onload = function() {
+    var simplemde = new SimpleMDE(
+        {
+        autofocus: true,
+        autosave: {},
+        blockStyles: {},
+        element: document.getElementById("id_content"),
+        forceSync: true,
+        hideIcons: [],
+        indentWithTabs: true,
+
+        lineWrapping: true,
+        placeholder: "Start typing...",
+        previewRender: function(plainText) {},
+        promptURLs: true,
+        showIcons: ["code",
+            "table",
+            "strikethrough",
+            "clean-block",
+            "horizontal-rule"],
+        spellChecker: true,
+        status: true,
+        styleSelectedText: true,
+        tabSize: 5,
+        toolbar: [/* Text styling */
+            "bold",
+            "italic",
+            "strikethrough",
+            "|",
+
+            /* Code and quotes */
+            "code",
+            "quote",
+            "|",
+
+            /* Lists */
+            "unordered-list",
+            "ordered-list",
+            "|",
+
+            /* Insert */
+            "link",
+            "image",
+            "table",
+            "horizontal-rule",
+            "|",
+
+            /* View modes */
+            "preview",
+            "side-by-side",
+            "fullscreen",
+            "|",
+
+            /* Help */
+            "guide",
+
+            "|", {
+                name: "custom-insert",
+                action: function(editor) {
+                    editor.codemirror.replaceSelection("**Custom Content**");
+                },
+                className: "fa fa-star",
+                title: "Insert Custom Content"
+            }],
+        toolbarTips: true,
+        shortcuts: {
+            drawTable: "Cmd-Alt-T",
+            togglePreview: "Cmd-P",
+            toggleSideBySide: "F9",
+            toggleFullScreen: "F11"
+        }
+        }
+    )
+};
+</script>
 <header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/code_header.jpeg" %})'>
   
     <div class="svg-border-waves text-light">
@@ -65,16 +143,14 @@ Post
                                 {{ form.content|as_crispy_field }}
                             </div>
                         </div>
-                        <div class="row">
-                            <label class="ml-5 mb-2">Select Tags (3 Max)</label>
-                        </div>
-                        <div class="row">
+                        <hr class="my-4">
+
+                        <div class="editor-label">Select Tags (3 Max)</div>
+                        <div class="row g-2">
                             {% for value in form.tag %}
-                            <div class="col-lg-4">
-                                <div class="form-check bg-dark text-white lift rounded-pill my-2 px-4 py-2 font-weight-bold">
-                                    <label class="form-check-label" for="gridCheck">
-                                        {{ value }}
-                                    </label>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="tag-pill">
+                                {{ value }}
                                 </div>
                             </div>
                             {% endfor %}
@@ -113,19 +189,51 @@ Post
     </div>
 </section>
 <!--markdown form editor-->
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script>
-document.getElementById("id_content").required = false;
-window.onload = function() {
-    var simplemde = new SimpleMDE(
-        {
-            autofocus: true,
-            element: document.getElementById("id_content"),
-            spellChecker: true,
-            toolbar: false,
-            forceSync: true
-        }
-    )
-};
+document.addEventListener("DOMContentLoaded", function() {
+
+    const editor = new EasyMDE({
+
+        element: document.getElementById("id_content"),
+
+        autofocus: true,
+        spellChecker: true,
+        autosave: {
+            enabled: true,
+            uniqueId: "editor_content",
+            delay: 1000
+        },
+
+        status: ["autosave", "lines", "words", "cursor"],
+
+        toolbar: [
+            "bold",
+            "italic",
+            "strikethrough",
+            "|",
+            "heading",
+            "heading-1",
+            "heading-2",
+            "heading-3",
+            "|",
+            "quote",
+            "unordered-list",
+            "ordered-list",
+            "|",
+            "link",
+            "image",
+            "table",
+            "horizontal-rule",
+            "|",
+            "preview",
+            "side-by-side",
+            "fullscreen",
+            "|",
+            "guide"
+        ]
+
+    });
+
+});
 </script>
 {% endblock %}

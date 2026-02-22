@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+                        <div class="container">
+                            <a class="navbar-brand text-white font-weight-bold" href="{% url 'blog:main' %}">
+                                Jose R. Dominguez
+                            </a>
+                            <span class="badge badge-pill badge-white text-dark  tech-font m-2">Content</span>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="ml-auto navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'blog:resume' %}">Resume</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'blog:services' %}">Services</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'blog:posts-by-tag' 'Case-Studies' %}">Projects</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'blog:content' %}">Content</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>
+                                    <li><a class="nav-link nav-dark text-white font-weight-bold" href="#">Request</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>

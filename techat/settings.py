@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://localhost:8000/' ,'*']
 
 
 # Application definition
@@ -158,11 +158,11 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
+PRODUCTION = not DEBUG
 #HTTPS settings
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = PRODUCTION
+CSRF_COOKIE_SECURE = PRODUCTION
+SECURE_SSL_REDIRECT = PRODUCTION
 
 #HSTS settings
 SECURE_HSTS_SECONDS = 3153600 #1 year

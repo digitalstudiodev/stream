@@ -17,26 +17,28 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/style3.css' %}" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
+            <nav class="navbar navbar-expand-lg navbar-transparent">
+                <div class="container">
                     <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder text-gradient">Jose R. Dominguez</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:main' %}"><span class="nav-text text-dark">Home</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:services' %}"><span class="nav-text text-dark">Services</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:content' %}"><span class="nav-text text-dark">Content</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'blog:main' %}#contact"><span class="nav-text text-dark">Contact</span></a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:resume' %}">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:services' %}">Services</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:posts-by-tag' 'Case-Studies' %}">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:content' %}">Content</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>
                             <li class="nav-item">
                                 <div class="form-check form-switch mt-2">
                                     <label class="form-check-label" for="lightSwitch"> <span class="text-gradient">Dark Mode</span> </label>
-                                    <input class="form-check-input" type="checkbox" id="lightSwitch" />
+                                    <input class="form-check-input ml-2" type="checkbox" id="lightSwitch" />
                                   </div>
-                                  
                                 <script src="{% static 'js/switch.js' %}"></script>
                             </li>
                         </ul>
@@ -44,18 +46,16 @@
                 </div>
             </nav>
             <!-- Page Content-->
-            <div class="container px-5 my-5">
+            <!--<div class="container px-5 my-5">
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <!-- Experience Section-->
                         <section>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h2 class="text-gradient fw-bolder mb-0">Experience</h2>
-                                <!-- Download resume button-->
-                                <!-- Note: Set the link href target to a PDF file within your project-->
+                                
                                 <a class="btn btn-primary px-4 py-3" href="https://drive.google.com/file/d/1gbT0KE1yoELIN--b7Fy9OPNQ4g8-ZczV/view">
                                     <div class="d-inline-block bi bi-download me-2"></div>
                                     Download Resume
@@ -68,7 +68,7 @@
                                     <button type="button" class="btn btn-outline-primary filter-btn" data-filter="research-entrepreneurship">Research &amp; Entrepreneurship</button>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="project-management">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="project-management">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -187,7 +187,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="research-entrepreneurship">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -212,7 +212,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Experience Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5 experience-card" data-category="data-engineering">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -236,12 +236,12 @@
                                 </div>
                             </div>
                         </section>
-                        <!-- Education Section-->
+                        
                         <section>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h2 class="text-gradient fw-bolder mb-0">Education</h2>
                             </div>
-                            <!-- Education Card -->
+                            
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="row align-items-center gx-5">
@@ -292,10 +292,166 @@
                         </section>
                     </div>
                 </div>
+            </div>-->
+            <div class="container">
+                <div class="resume-module__d8vlBG__resumeContainer">
+                    <div class="content resume-module__d8vlBG__resumeContentContainer">
+                        <div class="resume-module__d8vlBG__intro">
+                            <div class="resume-module__d8vlBG__name">
+                            Jose R. Dominguez
+                            <a href="#" target="_blank">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="resume-module__d8vlBG__svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path>
+                                </svg>
+                            </a>
+                            </div>
+                            <div class="resume-module__d8vlBG__links flex items-center gap-2">
+                            <a class="resume-module__d8vlBG__contact resume-module__d8vlBG__link resume-module__d8vlBG__text resume-module__d8vlBG__underline" href="mailto:aayush.sood@icloud.com" target="_blank">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M437.332 80H74.668C51.199 80 32 99.198 32 122.667v266.666C32 412.802 51.199 432 74.668 432h362.664C460.801 432 480 412.802 480 389.333V122.667C480 99.198 460.801 80 437.332 80zM432 170.667L256 288 80 170.667V128l176 117.333L432 128v42.667z"></path>
+                                </svg>
+                                josedom000@gmail.com
+                            </a>
+                            <p class="resume-module__d8vlBG__text resume-module__d8vlBG__linkDivider">|</p>
+                            <a class="resume-module__d8vlBG__contact resume-module__d8vlBG__link resume-module__d8vlBG__text resume-module__d8vlBG__underline" href="https://www.linkedin.com/in/soodaayush/" target="_blank">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                                </svg>
+                                in/josedom
+                            </a>
+                            <p class="resume-module__d8vlBG__text resume-module__d8vlBG__linkDivider">|</p>
+                            <a class="resume-module__d8vlBG__contact resume-module__d8vlBG__link resume-module__d8vlBG__text resume-module__d8vlBG__underline" href="https://github.com/soodaayush" target="_blank">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                                </svg>
+                                github.com/josedom
+                            </a>
+                            <p class="resume-module__d8vlBG__text resume-module__d8vlBG__linkDivider">|</p>
+                            <a class="resume-module__d8vlBG__contact resume-module__d8vlBG__link resume-module__d8vlBG__text resume-module__d8vlBG__underline" href="https://www.aayushsood.com/" target="_blank">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z" clip-rule="evenodd"></path>
+                                </svg>
+                                jose-dom.com
+                            </a>
+                            </div>
+                        </div>
+                        <div class="resume-module__d8vlBG__sectionContainer">
+                            <div class="resume-module__d8vlBG__sectionHeading">Education</div>
+                            <hr class="resume-module__d8vlBG__divider">
+                            <div class="resume-module__d8vlBG__schoolContainer">
+                            <div class="resume-module__d8vlBG__school">
+                                <div class="resume-module__d8vlBG__schoolDetails">
+                                    <b class="resume-module__d8vlBG__text">Bay View High School</b>
+                                    <p class="resume-module__d8vlBG__text">Upper Tantallon, NS</p>
+                                </div>
+                                <div class="resume-module__d8vlBG__schoolDetails"><i class="resume-module__d8vlBG__text">Secondary School - Grade 12</i><i class="resume-module__d8vlBG__text">Sep. 2023 - Present</i></div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="resume-module__d8vlBG__sectionContainer">
+                            <div class="resume-module__d8vlBG__sectionHeading">Accomplishments</div>
+                            <hr class="resume-module__d8vlBG__divider">
+                            <div class="resume-module__d8vlBG__accomplishmentContainer">
+                            <div class="resume-module__d8vlBG__accomplishmentTextContainer">
+                                <div class="resume-module__d8vlBG__text resume-module__d8vlBG__accomplishmentHeader">Some of my notable achievements, including but not limited to:</div>
+                            </div>
+                            <div>
+                                <ul class="resume-module__d8vlBG__list">
+                                    <li class="resume-module__d8vlBG__text">Competed as a Gold Tier team in the AFA <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.uscyberpatriot.org/" target="_blank">CyberPatriot</a> Competition, demonstrating cybersecurity skills - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">Invited to and participated in the Quantum School for Young Students <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://uwaterloo.ca/institute-for-quantum-computing/outreach/qsys" target="_blank">(QSYS)</a> hosted by University of Waterloo, focusing on Quantum Physics, Quantum Mechanics, Quantum Optics and Linear Algebra - 2025</li>
+                                    <li class="resume-module__d8vlBG__text"><a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.shad.ca/" target="_blank">SHAD</a> UNB Valedictorian - SHAD is a national STEAM program recognizing youth for excellence in innovation, leadership, and academics - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">Recipient of the Nova Scotia Lieutenant Governor's <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://lt.gov.ns.ca/honours-awards/awards" target="_blank">Education Medal</a>, awarded for outstanding leadership and academic achievement - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">Placed second in IWK Youth <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.smu.ca/ai-summit/may3.html" target="_blank">AI Pitch</a> Competition at the Atlantic AI Summit 2025, hosted by Saint Mary's University (SMU) - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">Section Leader in <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://codeinplace.stanford.edu/" target="_blank">Stanford</a> University's Code in Place program, teaching Python and supporting beginner learners in a global online classroom - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">IT Coordinator ('25-present) &amp; PR Manager ('24-'25) in Nova Scotia Secondary School Students' Association <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.nsssa.ca/" target="_blank">(NSSSA)</a> - Rebuilt the website, upgraded digital systems, ran provincial social media, and secured sponsorships</li>
+                                    <li class="resume-module__d8vlBG__text">Received Certificate of Distinction in Senior Division of University of Waterloo's Canadian Computing Competition (CCC), Score: 45/75 - 2025; made <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://cemc.uwaterloo.ca/sites/default/files/documents/2024/2024CCCResults.pdf" target="_blank">Honour Rolls</a> and received Certificate of Distinction in Junior division, Score: 66/75 - 2024</li>
+                                    <li class="resume-module__d8vlBG__text">Placed third in Lockheed Martin <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.lockheedmartin.com/en-us/who-we-are/communities/cyber-quest.html" target="_blank">CYBERQUEST</a> Competition, demonstrating skills in cryptography, forensics, and network security - 2025</li>
+                                    <li class="resume-module__d8vlBG__text">Competitively programming on <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://codeforces.com/profile/aayushsood" target="_blank">CodeForces.com</a>, aiming to increase rating above 1600+ by the end of 2025 - since 2024</li>
+                                    <li class="resume-module__d8vlBG__text">Completed Harvard's CS50x: Introduction to Computer Science course on <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://courses.edx.org/certificates/51884bfbb2734dc4bbdf1eca77ce83db" target="_blank">edX</a>, gaining a foundational understanding of Computer Science principles and proficiency in C - 2024</li>
+                                    <li class="resume-module__d8vlBG__text">Executive of Bay View High's Student Council and Founder and President of the <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://bvh-tech-club.netlify.app/" target="_blank">Technology Club</a> - since 2023</li>
+                                    <li class="resume-module__d8vlBG__text">Completed 90+ challenges on <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://leetcode.com/u/soodaayush/" target="_blank">LeetCode.com</a>, improving proficiency in data structures and algorithms - since 2022; Completed 50+ challenges on <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://www.frontendmentor.io/profile/soodaayush" target="_blank">FrontendMentor.io</a>, focussed on responsive web design and accessibility - since 2020</li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="resume-module__d8vlBG__sectionContainer">
+                            <div class="resume-module__d8vlBG__sectionHeading">Projects</div>
+                            <hr class="resume-module__d8vlBG__divider">
+                            <div class="resume-module__d8vlBG__projectContainer">
+                            <div class="resume-module__d8vlBG__project">
+                                <div class="resume-module__d8vlBG__projectDetails">
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading resume-module__d8vlBG__projectTitle">IWKids - Mobile App |<i class="resume-module__d8vlBG__techStack"> React Native, JavaScript, Expo, Git, OpenAI API</i></p>
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading">Apr 2025 - May 2025</p>
+                                </div>
+                                <ul class="resume-module__d8vlBG__projectNotes resume-module__d8vlBG__text">
+                                    <li>Developed an AI-powered mobile app to help families navigate emergency room visits at the IWK</li>
+                                    <li>Created for the Youth AI Pitch Competition hosted at the Atlantic Canada AI Summit in May 2025</li>
+                                </ul>
+                            </div>
+                            <div class="resume-module__d8vlBG__project">
+                                <div class="resume-module__d8vlBG__projectDetails">
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading resume-module__d8vlBG__projectTitle">Bay View High School - Mobile App |<i class="resume-module__d8vlBG__techStack"> React Native, JavaScript, Expo, Git</i></p>
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading">Jul 2024 - Sep 2024</p>
+                                </div>
+                                <ul class="resume-module__d8vlBG__projectNotes resume-module__d8vlBG__text">
+                                    <li>Developed a Bay View High School Mobile app to improve communication between staff and student body</li>
+                                    <li>Provides students with centralized to school news, announcements, events, and essential information</li>
+                                    <li>Application submitted as a final project for Harvard's CS50x course</li>
+                                </ul>
+                            </div>
+                            <div class="resume-module__d8vlBG__project">
+                                <div class="resume-module__d8vlBG__projectDetails">
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading resume-module__d8vlBG__projectTitle">Ben Eater's 6502 Project |<i class="resume-module__d8vlBG__techStack"> Python, Assembly</i></p>
+                                    <p class="resume-module__d8vlBG__text  resume-module__d8vlBG__projectHeading">Apr 2024 - Jul 2024</p>
+                                </div>
+                                <ul class="resume-module__d8vlBG__projectNotes resume-module__d8vlBG__text">
+                                    <li>A collection of hardware bread-boarding project surrounding the 6502 CPU, inspired by <a class="resume-module__d8vlBG__link resume-module__d8vlBG__underline" href="https://eater.net/" target="_blank">Ben Eater</a></li>
+                                </ul>
+                            </div>
+                            <div class="resume-module__d8vlBG__project">
+                                <div class="resume-module__d8vlBG__projectDetails">
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading resume-module__d8vlBG__projectTitle">CoinDeno Web / Mobile |<i class="resume-module__d8vlBG__techStack"> React.js, React Native, REST, Git, Firebase, CoinGecko APIs</i></p>
+                                    <p class="resume-module__d8vlBG__text resume-module__d8vlBG__projectHeading">Aug 2021 - Sep 2022</p>
+                                </div>
+                                <ul class="resume-module__d8vlBG__projectNotes resume-module__d8vlBG__text">
+                                    <li>Created a website and mobile app that allows tracking and portfolio management of various cryptocurrencies</li>
+                                    <li>Utilized React, Firebase, and Redux for application development, with CoinGecko REST APIs for cryptocurrency data integration</li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="resume-module__d8vlBG__sectionContainer">
+                            <div class="resume-module__d8vlBG__sectionHeading">Skills</div>
+                            <hr class="resume-module__d8vlBG__divider">
+                            <div class="resume-module__d8vlBG__technicalSkillsContainer">
+                            <div class="resume-module__d8vlBG__skill">
+                                <b class="resume-module__d8vlBG__text">Programming Languages: </b>
+                                <p class="resume-module__d8vlBG__text"><label class="resume-module__d8vlBG__text resume-module__d8vlBG__space">&nbsp;</label>Python, C++, JavaScript, SQL, HTML, CSS/SCSS</p>
+                            </div>
+                            <div class="resume-module__d8vlBG__skill">
+                                <b class="resume-module__d8vlBG__text">Programming Frameworks: </b>
+                                <p class="resume-module__d8vlBG__text"><label class="resume-module__d8vlBG__text resume-module__d8vlBG__space">&nbsp;</label>React, React Native, Node.js</p>
+                            </div>
+                            <div class="resume-module__d8vlBG__skill">
+                                <b class="resume-module__d8vlBG__text">Developer Tools: </b>
+                                <p class="resume-module__d8vlBG__text"><label class="resume-module__d8vlBG__text resume-module__d8vlBG__space">&nbsp;</label>Firebase, Cloudflare, Netlify, Git, GitHub, iOS, Android, Yarn, NPM</p>
+                            </div>
+                            <div class="resume-module__d8vlBG__skill">
+                                <b class="resume-module__d8vlBG__text">Programming Libraries: </b>
+                                <p class="resume-module__d8vlBG__text"><label class="resume-module__d8vlBG__text resume-module__d8vlBG__space">&nbsp;</label>Tailwind, Bootstrap</p>
+                            </div>
+                            <div class="resume-module__d8vlBG__skill">
+                                <b class="resume-module__d8vlBG__text">Productivity Tools and OS: </b> 
+                                <p class="resume-module__d8vlBG__text"><label class="resume-module__d8vlBG__text resume-module__d8vlBG__space">&nbsp;</label>MS Office, MS Teams, Google Suite, Jira, Adobe Photoshop, OBS Studio, Linux</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+        <!--<footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Made by Jose R. Dominguez</div></div>
@@ -308,7 +464,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer>-->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
