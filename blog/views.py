@@ -13,7 +13,9 @@ def services(request):
     return render(request, 'blog/services.html')
 
 def main(request):
-    return render(request, 'blog/jose-dom-index.html')
+    context = {}
+    context['posts'] = Post.objects.all()
+    return render(request, 'blog/jose-dom-index.html', context=context)
 
 def resume(request):
     return render(request, 'blog/resume.html')
@@ -38,6 +40,13 @@ class TagPostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 50
+
+    def get_context_data(self,**kwargs):
+        context = super(TagPostListView,self).get_context_data(**kwargs)
+        tags = TAG_OPTIONS
+        first_tag = map(lambda x: x[0], tags)
+        context['tags'] = first_tag
+        return context
 
     def get_queryset(self,**kwargs):
         return Post.objects.filter(tag__icontains=self.kwargs['tag'])

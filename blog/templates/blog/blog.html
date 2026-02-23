@@ -14,7 +14,16 @@ Feed
                         <div class="container px-5 mt-10">
                             <div class="d-flex align-items-center justify-content-between">
                                 <h6 class="mb-0">
-                                    <span class="text-gradient">Featured</span>
+                                    {% if posts %}
+                                        {% for post in posts|slice:":1" %}
+                                                {% for tag in post.tag %}
+                                                        {% if tag == "Featured" %}
+                                                     <span class="text-gradient">Featured</span>
+                                                        {% endif %}
+                                                {% endfor %}
+                                        {% endfor %}
+                                        
+                                    {% endif %}
                                 </h6>
                                 <div>
                                     <!--<a class="text-arrow-icon small" href="#!">
@@ -47,7 +56,9 @@ Feed
                                 {% endfor %}
                             {% endfor %}
                             <div class="d-flex align-items-center justify-content-between">
+                                {% if posts %}
                                 <span class="text-gradient">Recent</span>
+                                {% endif %}
                                 <!--<div>
                                     <a class="text-arrow-icon small" href="#!">
                                         View more
@@ -72,12 +83,25 @@ Feed
                                     </div>
                                     <hr class="my-4" />
                                     {% endfor %}
+                                    {% if not posts %}
+                                        <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p>No Posts Available</p>
+                                            <a class="text-arrow-icon small" href="{% url 'blog:content' %}">
+                                                View content
+                                                <i data-feather="arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    
+                                    </div>
+                                    <hr class="my-4" />
+                                    {% endif %}
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-blog justify-content-center">
                                             {% if is_paginated %}
                                                 {% if page_obj.has_previous %}
                                                     <li class="page-item">
-                                                        <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                                                        <a class="page-link text-dark" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true" class="text-dark">«</span></a>
                                                     </li>
                                                 {% endif %}
                                                 {% for num in page_obj.paginator.page_range %}
@@ -89,7 +113,7 @@ Feed
                                                 {% endfor %}
                                                 {% if page_obj.has_next %}
                                                     <li class="page-item">
-                                                        <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                                        <a class="page-link text-dark" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true" class="text-dark">»</span></a>
                                                     </li>
                                                 {% endif %}
                                             {% endif %}

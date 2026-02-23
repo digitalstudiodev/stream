@@ -94,19 +94,32 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-12">
                             <div class="text-center my-5">
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Lastest Posts</span></h2>
-                                <p class="lead text-primary mb-4 py-5">To read my articles about software, data, science and other topics follow and subscribe to Digital Stream.</p>
-                                <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder text-white mb-5" href="https://medium.com/digital-studio-stream">View All</a>
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Recent Work</span></h2>
+                                <p class="lead text-primary mb-4 py-5">View my latest work as it relates to software, data, science and other topics.</p>
+                                <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder text-white mb-5" href="{% url 'blog:content' %}">View All</a>
                             </div>
-                            <div id="retainable-rss-embed" 
-                            data-rss="https://medium.com/feed/digital-studio-stream"
-                                data-maxcols="4" 
-                                data-layout="grid" 
-                                data-poststyle="inline" 
-                                data-readmore="Read the rest" 
-                                data-buttonclass="btn btn-primary" 
-                                data-offset="-100">
+                            {% for post in posts %}
+                                {% for tag in post.tag %}
+                                    {% if tag == "Featured" %}
+                            <div class="card mb-4">
+                                <div class="card-body p-0">
+                                    <div class="row g-0">
+                                        <div class="col-lg-6 p-5">
+                                            <a class="badge badge-marketing bg-primary-soft rounded-pill text-primary mb-3" href="{% url 'blog:post-detail' post.id %}">{{ post.get_tag_display }}</a>
+                                            <a class="text-dark" href="{% url 'blog:post-detail' post.id %}"><h1>{{ post.title }}</h1></a>
+                                            <p class="text-dark">{{ post.get_shorten_preview }}</p>
+                                            <a class="text-arrow-icon small" href="{% url 'blog:post-detail' post.id %}">
+                                                Read more
+                                                <i data-feather="arrow-right"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 align-self-stretch bg-img-cover d-none d-lg-flex" style="background-image: url({{ post.featured_image.url }})"></div>
+                                    </div>
+                                </div>
                             </div>
+                            {% endif %}
+                                {% endfor %}
+                            {% endfor %}
                         </div>
                     </div>
             </div>
