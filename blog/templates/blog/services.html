@@ -90,453 +90,830 @@
             <div id="layoutDefault_content">
                 <main>
                     {% include "blog/nav_services.html" %}
-                    <header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/newark.jpg" %})'>
-                        <div class="page-header-ui-content">
-                            <div class="container px-5 my-5">
-                                <div class="row gx-5 justify-content-center align-items-center">
-                                    <div class="col-lg-12 p-3" data-aos="fade-right">
-                                        <h1 class="page-header-ui-title display-4 mt-2 mb-5 text-white">Scalable Software & Data Systems.<br><span class="font-weight-bold">Built Right.</span></h1>
-                                        <p class="text-white">Web applications, backend infrastructure, and analytic pipelines engineered for performance and growth.</p>
-                                        <div class="icon-list-social mb-5 mx-auto" data-aos="fade-up" data-aos-delay="100">
-                                            <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
-                                                <i class="fab fa-instagram" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
-                                                <i class="fab fa-facebook" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
-                                                <i class="fab fa-github" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
-                                                <i class="fab fa-linkedin" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
-                                                <i class="fab fa-medium" style="color: white !important;"></i>
-                                            </a>
-                                            <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
-                                                <i class="fab fa-youtube" style="color: white !important;"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 z-1" data-aos="fade-left">
-                                        <!--<div class="card rounded-3 text-dark">
-                                            <div class="card-header py-4 text-black">Need a Custom Software? Tell us about Your project</div>
-                                            <div class="card-body">
-                                                <form action="https://formspree.io/f/xwkzyyvz" method="POST">
-                                                    <div class="row gx-5 mb-3">
-                                                        <div class="col-md-6">
-                                                            <label class="small text-gray-600" for="leadCapFirstName">First Name</label>
-                                                            <input class="form-control" id="leadCapFirstName" type="text" name="first_name" />
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label class="small text-gray-600" for="leadCapLastName">Last Name</label>
-                                                            <input class="form-control" id="leadCapLastName" type="text" name="last_name" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="small text-gray-600" for="leadCapEmail">Email address</label>
-                                                        <input class="form-control" id="leadCapEmail" type="email" name="email" />
-                                                    </div>
-                                                    <div class="mb-4">
-                                                        <label class="small text-gray-600" for="leadCapCompany">Company or Organization</label>
-                                                        <input class="form-control" id="leadCapCompany" type="text" name="company" />
-                                                    </div>
-                                                    <div class="d-grid"><button class="btn btn-primary fw-500 btn-marketing" type="submit">Let's Connect</button></div>
-                                                </form>
-                                            </div>
-                                        </div>-->
-                                    </div>
-                                </div>
-                                <div class="wrapper mb-5">
-                                    <div class="track">
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    Data Engineering & Pipeline Development
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Design and implement scalable ELT/ETL pipelines that ingest, transform, and operationalize data from APIs, databases, and third-party platforms into analytics-ready systems.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: Automated pipelines, data warehouses, transformation logic, scheduled workflows.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#DataEngineeringPipelineDevelopment"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    Cloud Data Platform Architecture
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Build secure, production-grade data infrastructure on Azure and AWS, including relational databases, storage layers, and compute environments optimized for performance and scalability.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: Cloud architecture, Azure SQL / AWS RDS deployments, storage design, infrastructure automation.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#CloudDataPlatformArchitecture"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    Analytics Dashboards & Business Intelligence
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Develop executive-level dashboards and reporting systems that provide real-time visibility into operations, financial performance, and key metrics.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: Tableau, Power BI, or custom dashboards; KPI frameworks; analytics data models.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#AnalyticsDashboardsBusinessIntelligence"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    Custom Web Applications & Backend Systems
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Develop secure, scalable backend systems and full-stack applications using Django, FastAPI, ASP.NET Core, and modern cloud infrastructure.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: Custom web platforms, APIs, authentication systems, database architecture.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#CustomWebApplicationsBackendSystems"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    API Integration & Workflow Automation
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Integrate disparate systems and automate workflows across enterprise platforms such as Salesforce, cloud services, and internal tools to eliminate manual processes.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: API integrations, automation pipelines, event-driven workflows, system synchronization.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#APIIntegrationWorkflowAutomation"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="badge">
-                                            <div class="card">
-                                                <div class="card-header text-dark text-wrap text-center">
-                                                    Data Strategy & Technical Consulting
-                                                </div>
-                                                <div class="card-body">
-                                                    <small class="text-dark text-wrap">Advise organizations on how to structure, manage, and scale their data and software infrastructure to support growth, analytics, and product development.</small>
-                                                    <hr>
-                                                    <small class="text-dark text-wrap">Deliverables: Architecture plans, data models, system audits, implementation roadmaps.</small>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <!--<a class="btn-primary btn px-4 ml-lg-4" href="#">Learn More</a>-->
-                                                    <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal" data-target="#DataStrategyTechnicalConsulting"><small>Learn More</small></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80"
+    style='background-image: url({% static "assets/img/newark.jpg" %})'>
+
+    <!-- OPTIONAL: local helper styles for tech logos (kept within this header scope) -->
+    <style>
+        .tech-stack-label {
+            display: block;
+            font-size: 0.78rem;
+            color: #444;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .tech-logo {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            opacity: 0.95;
+            filter: grayscale(10%);
+            transition: opacity .15s ease, filter .15s ease, transform .15s ease;
+        }
+
+        .tech-logo:hover {
+            opacity: 1;
+            filter: none;
+            transform: translateY(-1px);
+        }
+
+        .tech-logo--lg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .modal-section {
+            margin-top: 14px;
+        }
+
+        .modal-section h6 {
+            margin-bottom: 6px;
+        }
+
+        .modal-kpi {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .modal-kpi {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .kpi-card {
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            padding: 10px 12px;
+            background: #fafafa;
+        }
+
+        .kpi-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin: 0 0 4px;
+        }
+
+        .kpi-desc {
+            margin: 0;
+            color: #333;
+            font-size: 0.88rem;
+        }
+    </style>
+
+    <div class="page-header-ui-content">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center align-items-center">
+                <div class="col-lg-12 p-3" data-aos="fade-right">
+                    <h1 class="page-header-ui-title display-4 mt-2 mb-5 text-white">
+                        Scalable Software &amp; Data Systems.<br><span class="font-weight-bold">Built Right.</span>
+                    </h1>
+                    <p class="text-white">
+                        Web applications, backend infrastructure, and analytic pipelines engineered for performance and growth.
+                    </p>
+
+                    <div class="icon-list-social mb-5 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
+                            <i class="fab fa-instagram" style="color: white !important;"></i>
+                        </a>
+                        <a class="icon-list-social-link" href="https://www.facebook.com/digitalstudio.dev/">
+                            <i class="fab fa-facebook" style="color: white !important;"></i>
+                        </a>
+                        <a class="icon-list-social-link" href="https://github.com/digitalstudiodev">
+                            <i class="fab fa-github" style="color: white !important;"></i>
+                        </a>
+                        <a class="icon-list-social-link" href="https://www.linkedin.com/company/digitalstudio-dev/">
+                            <i class="fab fa-linkedin" style="color: white !important;"></i>
+                        </a>
+                        <a class="icon-list-social-link" href="https://medium.com/digital-studio-stream">
+                            <i class="fab fa-medium" style="color: white !important;"></i>
+                        </a>
+                        <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
+                            <i class="fab fa-youtube" style="color: white !important;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 z-1" data-aos="fade-left">
+                    <!-- form removed as in original -->
+                </div>
+            </div>
+
+            <!-- SERVICES CAROUSEL -->
+            <div class="wrapper mb-5">
+                <div class="track">
+
+                    <!-- 1) Data Engineering & Pipeline Development -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                Data Engineering &amp; Pipeline Development
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Design and implement scalable ELT/ETL pipelines that ingest, transform, and operationalize data from APIs,
+                                    databases, and third-party platforms into analytics-ready systems.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: Automated pipelines, data warehouses, transformation logic, scheduled workflows.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=24">
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal Data Engineering & Pipeline Development-->
-                        <div id="DataEngineeringPipelineDevelopment" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">Data Engineering & Pipeline Development</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Build automated data pipelines that reliably collect, transform, and store data from APIs, databases, files, or streaming systems into structured, analytics-ready datasets. These pipelines eliminate manual data handling and create the foundation for reporting, dashboards, applications, and analytics.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations gain continuous access to clean, reliable data without manual intervention. Pipelines ensure data is always up-to-date, structured correctly, and immediately usable for operational reporting and decision-making.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Connect to data sources such as APIs, databases, or cloud storage</li>
-                                            <li class="list-item text-dark">Extract and ingest data into centralized storage</li>
-                                            <li class="list-item text-dark">Normalize and transform raw data into structured relational schemas</li>
-                                            <li class="list-item text-dark">Implement automated scheduling for continuous updates</li>
-                                            <li class="list-item text-dark">Apply validation checks to ensure data quality and consistency</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Production-ready ingestion pipeline (Python and SQL)</li>
-                                            <li class="list-item text-dark">Structured data warehouse tables</li>
-                                            <li class="list-item text-dark">Automated execution scheduling (AWS, Azure)</li>
-                                            <li class="list-item text-dark">Data transformation and validation logic</li>
-                                            <li class="list-item text-dark">Deployment and maintenance documentation</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Eliminate manual data processing workflows</li>
-                                            <li class="list-item text-dark">Improve data reliability and accessibility</li>
-                                            <li class="list-item text-dark">Enable reporting, analytics, and application integration</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#DataEngineeringPipelineDevelopment"><small>Learn More</small></button>
                             </div>
                         </div>
-                        <!-- Modal Cloud Data Platform Architecture-->
-                        <div id="CloudDataPlatformArchitecture" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">Cloud Data Platform Architecture</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Design and deploy scalable cloud infrastructure to securely store, manage, and access organizational data. This service establishes the foundation for analytics, applications, and operational systems.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations gain a centralized, secure, and scalable data environment that supports analytics, software applications, and future growth.
-                                        </p>
-                                        <h6 class="font-weight-bold">Scope of Work</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Design database architecture optimized for performance and scalability</li>
-                                            <li class="list-item text-dark">Deploy cloud infrastructure on AWS or Azure</li>
-                                            <li class="list-item text-dark">Configure relational databases and storage layers</li>
-                                            <li class="list-item text-dark">Implement access controls and security policies</li>
-                                            <li class="list-item text-dark">Configure infrastructure for reliability and scalability</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Fully deployed cloud database environment</li>
-                                            <li class="list-item text-dark">Storage architecture implementation (S3, Blob Storage, or warehouse)</li>
-                                            <li class="list-item text-dark">Secure access configuration and authentication setup</li>
-                                            <li class="list-item text-dark">Architecture diagrams and documentation</li>
-                                            <li class="list-item text-dark">Deployment configuration and operational guidelines</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Centralized and secure data infrastructure</li>
-                                            <li class="list-item text-dark">Scalable foundation for analytics and applications</li>
-                                            <li class="list-item text-dark">Improved system reliability and performance</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+                    </div>
+
+                    <!-- 2) Cloud Data Platform Architecture -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                Cloud Data Platform Architecture
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Build secure, production-grade data infrastructure on Azure and AWS, including relational databases,
+                                    storage layers, and compute environments optimized for performance and scalability.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: Cloud architecture, Azure SQL / AWS RDS deployments, storage design, infrastructure automation.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=24">
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal Analytics Dashboards & Business Intelligence-->
-                        <div id="AnalyticsDashboardsBusinessIntelligence" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">Analytics Dashboards & Business Intelligence</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Develop interactive dashboards and reporting systems that transform raw data into clear, actionable insights for leadership and operational teams.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations gain visibility into key performance indicators, operational metrics, and business trends through real-time dashboards.
-                                        </p>
-                                        <h6 class="font-weight-bold">Scope of Work</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Define key metrics and reporting requirements</li>
-                                            <li class="list-item text-dark">Design relational data models optimized for reporting</li>
-                                            <li class="list-item text-dark">Develop dashboards using Tableau, Power BI, or web applications</li>
-                                            <li class="list-item text-dark">Connect dashboards to live production data sources</li>
-                                            <li class="list-item text-dark">Configure secure access and sharing</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Interactive dashboard system</li>
-                                            <li class="list-item text-dark">SQL queries and data models</li>
-                                            <li class="list-item text-dark">KPI definitions and reporting framework</li>
-                                            <li class="list-item text-dark">Dashboard deployment and access setup</li>
-                                            <li class="list-item text-dark">Documentation and usage guide</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Real-time insight into operational performance</li>
-                                            <li class="list-item text-dark">Improved decision-making through data visibility</li>
-                                            <li class="list-item text-dark">Reduced reliance on manual reporting</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#CloudDataPlatformArchitecture"><small>Learn More</small></button>
                             </div>
                         </div>
-                        <!-- Modal Custom Web Applications & Backend Systems-->
-                        <div id="CustomWebApplicationsBackendSystems" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">Custom Web Applications & Backend Systems</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Design and develop secure, scalable web applications and backend systems tailored to organizational workflows and product requirements.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations can launch custom platforms, automate workflows, and deliver software products built specifically for their operational needs.
-                                        </p>
-                                        <h6 class="font-weight-bold">Scope of Work</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Design backend system architecture</li>
-                                            <li class="list-item text-dark">Implement secure APIs and application logic</li>
-                                            <li class="list-item text-dark">Develop relational database schemas</li>
-                                            <li class="list-item text-dark">Deploy applications to cloud infrastructure</li>
-                                            <li class="list-item text-dark">Implement authentication and access control systems</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Production-ready backend system (Django, ASP.NET Core)</li>
-                                            <li class="list-item text-dark">Database architecture and schema implementation</li>
-                                            <li class="list-item text-dark">Secure authentication system</li>
-                                            <li class="list-item text-dark">Cloud deployment and infrastructure setup</li>
-                                            <li class="list-item text-dark">API documentation and system documentation</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Launch custom software platforms</li>
-                                            <li class="list-item text-dark">Automate operational workflows</li>
-                                            <li class="list-item text-dark">Support scalable product development</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+                    </div>
+
+                    <!-- 3) Analytics Dashboards & Business Intelligence -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                Analytics Dashboards &amp; Business Intelligence
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Develop executive-level dashboards and reporting systems that provide real-time visibility into operations,
+                                    financial performance, and key metrics.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: Tableau, Power BI, or custom dashboards; KPI frameworks; analytics data models.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="Tableau" src="https://cdn.simpleicons.org/tableau?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Power BI" src="https://cdn.simpleicons.org/powerbi?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=24">
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal API Integration & Workflow Automation-->
-                        <div id="APIIntegrationWorkflowAutomation" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">API Integration & Workflow Automation</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Integrate external systems and automate workflows to eliminate manual processes and ensure seamless data synchronization across platforms.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations can connect systems, automate operations, and maintain consistent data across applications.
-                                        </p>
-                                        <h6 class="font-weight-bold">Scope of Work</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Connect systems via REST APIs or cloud services</li>
-                                            <li class="list-item text-dark">Implement automated data synchronization pipelines</li>
-                                            <li class="list-item text-dark">Design integration workflows and processing logic</li>
-                                            <li class="list-item text-dark">Configure automation scheduling and monitoring</li>
-                                            <li class="list-item text-dark">Implement error handling and logging mechanisms</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">API integration implementation</li>
-                                            <li class="list-item text-dark">Automated workflow pipeline</li>
-                                            <li class="list-item text-dark">Data synchronization logic</li>
-                                            <li class="list-item text-dark">Monitoring and error handling systems</li>
-                                            <li class="list-item text-dark">Deployment and documentation</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Eliminate manual data transfer</li>
-                                            <li class="list-item text-dark">Improve operational efficiency</li>
-                                            <li class="list-item text-dark">Ensure consistent and reliable data across systems</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#AnalyticsDashboardsBusinessIntelligence"><small>Learn More</small></button>
                             </div>
                         </div>
-                        <div id="DataStrategyTechnicalConsulting" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title font-weight-bold">Data Strategy & Technical Consulting</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h6 class="font-weight-bold">Overview</h6>
-                                        <p class="text-dark">
-                                            Provide expert guidance on designing, optimizing, and scaling data platforms and software infrastructure to support organizational growth.
-                                        </p>
-                                        <h6 class="font-weight-bold">What this enables</h6>
-                                        <p class="text-dark">
-                                            Organizations gain a clear technical roadmap and architecture strategy aligned with their business goals.
-                                        </p>
-                                        <h6 class="font-weight-bold">Scope of Work</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Evaluate existing systems and infrastructure</li>
-                                            <li class="list-item text-dark">Design scalable data architecture</li>
-                                            <li class="list-item text-dark">Recommend database and platform technologies</li>
-                                            <li class="list-item text-dark">Identify performance and scalability improvements</li>
-                                            <li class="list-item text-dark">Provide implementation roadmap</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Deliverables</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Architecture design and recommendations</li>
-                                            <li class="list-item text-dark">Data model and infrastructure plan</li>
-                                            <li class="list-item text-dark">System audit and technical assessment</li>
-                                            <li class="list-item text-dark">Implementation roadmap</li>
-                                            <li class="list-item text-dark">Technical documentation</li>
-                                        </ul>
-                                        <h6 class="font-weight-bold">Outcomes</h6>
-                                        <ul>
-                                            <li class="list-item text-dark">Clear strategy for scaling systems</li>
-                                            <li class="list-item text-dark">Reduced technical risk</li>
-                                            <li class="list-item text-dark">Improved infrastructure performance and reliability</li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
+                    </div>
+
+                    <!-- 4) Custom Web Applications & Backend Systems -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                Custom Web Applications &amp; Backend Systems
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Develop secure, scalable backend systems and full-stack applications using Django, FastAPI, ASP.NET Core,
+                                    and modern cloud infrastructure.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: Custom web platforms, APIs, authentication systems, database architecture.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="Django" src="https://cdn.simpleicons.org/django?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="FastAPI" src="https://cdn.simpleicons.org/fastapi?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt=".NET" src="https://cdn.simpleicons.org/dotnet?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="JavaScript" src="https://cdn.simpleicons.org/javascript?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=24">
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#CustomWebApplicationsBackendSystems"><small>Learn More</small></button>
+                            </div>
                         </div>
-                    </header>
+                    </div>
+
+                    <!-- 5) API Integration & Workflow Automation -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                API Integration &amp; Workflow Automation
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Integrate disparate systems and automate workflows across enterprise platforms such as Salesforce,
+                                    cloud services, and internal tools to eliminate manual processes.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: API integrations, automation pipelines, event-driven workflows, system synchronization.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="Salesforce" src="https://cdn.simpleicons.org/salesforce?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="JavaScript" src="https://cdn.simpleicons.org/javascript?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=24">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#APIIntegrationWorkflowAutomation"><small>Learn More</small></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6) Data Strategy & Technical Consulting -->
+                    <div class="badge">
+                        <div class="card">
+                            <div class="card-header text-dark text-wrap text-center">
+                                Data Strategy &amp; Technical Consulting
+                            </div>
+                            <div class="card-body">
+                                <small class="text-dark text-wrap">
+                                    Advise organizations on how to structure, manage, and scale their data and software infrastructure to
+                                    support growth, analytics, and product development.
+                                </small>
+                                <hr>
+                                <small class="text-dark text-wrap">
+                                    Deliverables: Architecture plans, data models, system audits, implementation roadmaps.
+                                </small>
+
+                                <span class="tech-stack-label">Tech</span>
+                                <div class="tech-stack">
+                                    <img class="tech-logo" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=24">
+                                    <img class="tech-logo" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=24">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-sm bg-dark text-white" data-toggle="modal"
+                                    data-target="#DataStrategyTechnicalConsulting"><small>Learn More</small></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================= MODALS ========================= -->
+
+    <!-- Modal 1: Data Engineering & Pipeline Development -->
+    <div id="DataEngineeringPipelineDevelopment" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">Data Engineering &amp; Pipeline Development</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Build automated, production-ready data pipelines that reliably collect, transform, validate, and deliver data from
+                            APIs, databases, files, and third-party platforms into analytics-ready tables. The goal is to replace fragile
+                            spreadsheets and manual exports with repeatable workflows that are monitored, documented, and scalable.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Typical Use Cases</h6>
+                        <ul>
+                            <li class="list-item text-dark">Daily/Hourly ingestion from REST APIs (pagination, retries, backoff, rate limits)</li>
+                            <li class="list-item text-dark">CDC-style refresh patterns (incremental loads, watermarking, idempotent runs)</li>
+                            <li class="list-item text-dark">Standardizing data into star schema / relational models for BI and reporting</li>
+                            <li class="list-item text-dark">Data quality rules (null thresholds, referential checks, anomaly detection)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Scope of Work</h6>
+                        <ul>
+                            <li class="list-item text-dark">Source discovery &amp; access setup (API keys, service principals, DB auth)</li>
+                            <li class="list-item text-dark">Ingestion design (raw landing zone → staging → curated models)</li>
+                            <li class="list-item text-dark">Transformations in Python/SQL (normalization, dedupe, type enforcement)</li>
+                            <li class="list-item text-dark">Scheduling + orchestration (cloud-native schedules / jobs)</li>
+                            <li class="list-item text-dark">Monitoring, alerts, logging, and run-history visibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Deliverables</h6>
+                        <ul>
+                            <li class="list-item text-dark">Production pipeline codebase (Python + SQL) with environment configuration</li>
+                            <li class="list-item text-dark">Structured warehouse tables (curated schemas, constraints, and documentation)</li>
+                            <li class="list-item text-dark">Automated scheduling (AWS/Azure) + error alerts and run logs</li>
+                            <li class="list-item text-dark">Data validation layer and pipeline health checks</li>
+                            <li class="list-item text-dark">Deployment guide + operator runbook (how to maintain and extend)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes (Business Value)</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Faster reporting cycles</p>
+                                <p class="kpi-desc">Data is refreshed automatically and consistently—no manual exports or merging.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Higher data trust</p>
+                                <p class="kpi-desc">Validation rules and monitoring reduce surprises and downstream failures.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Scalable foundation</p>
+                                <p class="kpi-desc">Curated datasets can power dashboards, apps, and analytics without rework.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Operational visibility</p>
+                                <p class="kpi-desc">Run logs and alerts make failures actionable instead of silent.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Cloud Data Platform Architecture -->
+    <div id="CloudDataPlatformArchitecture" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">Cloud Data Platform Architecture</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Design and deploy a secure, scalable data platform in AWS or Azure that supports analytics, application workloads,
+                            and operational reporting. This includes database selection, storage architecture, security controls, and
+                            environment setup to ensure performance and reliability from day one.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Architecture Components</h6>
+                        <ul>
+                            <li class="list-item text-dark">Relational data layer (managed database deployments)</li>
+                            <li class="list-item text-dark">Storage layer (object storage, curated zones, backups)</li>
+                            <li class="list-item text-dark">Compute &amp; job execution (scheduled tasks, batch compute)</li>
+                            <li class="list-item text-dark">Security posture (IAM/RBAC, secrets, network rules, encryption)</li>
+                            <li class="list-item text-dark">Observability (logging, metrics, access auditing)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Scope of Work</h6>
+                        <ul>
+                            <li class="list-item text-dark">Requirements gathering (data volume, latency, SLAs, stakeholders)</li>
+                            <li class="list-item text-dark">Reference architecture + diagram (current state → target state)</li>
+                            <li class="list-item text-dark">Provisioning (database, storage, networking, identity access)</li>
+                            <li class="list-item text-dark">Performance considerations (indexing, partitioning, sizing)</li>
+                            <li class="list-item text-dark">Backup/restore strategy and disaster recovery planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Deliverables</h6>
+                        <ul>
+                            <li class="list-item text-dark">Deployed cloud environment (dev/prod separation where applicable)</li>
+                            <li class="list-item text-dark">Database + storage design (schemas, zones, lifecycle rules)</li>
+                            <li class="list-item text-dark">Security configuration (roles, policies, key management)</li>
+                            <li class="list-item text-dark">Architecture diagram + operational documentation</li>
+                            <li class="list-item text-dark">Runbook: provisioning, access, backups, and scaling guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Production-ready foundation</p>
+                                <p class="kpi-desc">A clean cloud baseline designed for growth and stability.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Security and compliance alignment</p>
+                                <p class="kpi-desc">Access controls, auditability, and encryption are designed in—not bolted on.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Better performance</p>
+                                <p class="kpi-desc">Right sizing + indexing guidance avoids slow queries and runaway costs.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Lower operational risk</p>
+                                <p class="kpi-desc">Backups, restore testing, and runbooks reduce downtime risk.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Analytics Dashboards & Business Intelligence -->
+    <div id="AnalyticsDashboardsBusinessIntelligence" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">Analytics Dashboards &amp; Business Intelligence</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Tableau" src="https://cdn.simpleicons.org/tableau?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Power BI" src="https://cdn.simpleicons.org/powerbi?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Build dashboards and reporting systems that leadership can trust. This service covers KPI definition, data modeling,
+                            semantic layer design, and dashboard implementation with a focus on performance, clarity, and adoption.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">What You Get</h6>
+                        <ul>
+                            <li class="list-item text-dark">KPI catalog with definitions, filters, and calculation rules</li>
+                            <li class="list-item text-dark">Analytics-ready data model (facts/dimensions or reporting views)</li>
+                            <li class="list-item text-dark">Interactive dashboards (executive + operational views)</li>
+                            <li class="list-item text-dark">Role-based access and sharing setup</li>
+                            <li class="list-item text-dark">Performance tuning (query optimization, extract strategy where needed)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Typical Dashboards</h6>
+                        <ul>
+                            <li class="list-item text-dark">Executive KPI overview (weekly/monthly trend + variance)</li>
+                            <li class="list-item text-dark">Operational pipeline / throughput (volume, cycle time, bottlenecks)</li>
+                            <li class="list-item text-dark">Financial performance (revenue, costs, margin, forecasts)</li>
+                            <li class="list-item text-dark">Data quality dashboards (freshness, missingness, anomalies)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Single source of truth</p>
+                                <p class="kpi-desc">Consistent metrics reduce stakeholder debates and spreadsheet drift.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Faster decisions</p>
+                                <p class="kpi-desc">Live dashboards replace manual reporting cycles.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Higher adoption</p>
+                                <p class="kpi-desc">Simple, performant views increase usage and trust.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Reduced reporting burden</p>
+                                <p class="kpi-desc">Automation eliminates recurring “can you pull this report?” requests.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Custom Web Applications & Backend Systems -->
+    <div id="CustomWebApplicationsBackendSystems" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">Custom Web Applications &amp; Backend Systems</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Django" src="https://cdn.simpleicons.org/django?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="FastAPI" src="https://cdn.simpleicons.org/fastapi?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt=".NET" src="https://cdn.simpleicons.org/dotnet?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="JavaScript" src="https://cdn.simpleicons.org/javascript?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Build secure, scalable web applications and APIs designed around your workflows. This service covers application
+                            architecture, backend implementation, database design, authentication, and cloud deployment—with the goal of
+                            shipping software that performs reliably under growth.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Scope of Work</h6>
+                        <ul>
+                            <li class="list-item text-dark">Backend architecture (services, modules, API boundaries)</li>
+                            <li class="list-item text-dark">REST API development (versioning, pagination, validation)</li>
+                            <li class="list-item text-dark">Authentication and authorization (RBAC, JWT/OAuth patterns)</li>
+                            <li class="list-item text-dark">Database design (schemas, indexing, constraints, migrations)</li>
+                            <li class="list-item text-dark">Deployment patterns (CI/CD, environment separation, secrets)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Deliverables</h6>
+                        <ul>
+                            <li class="list-item text-dark">Production-ready web app or API (Django/FastAPI/ASP.NET Core)</li>
+                            <li class="list-item text-dark">Database schema + migration scripts</li>
+                            <li class="list-item text-dark">Authentication system + permission model</li>
+                            <li class="list-item text-dark">Cloud deployment configuration and operational notes</li>
+                            <li class="list-item text-dark">API documentation (endpoints, payloads, error codes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Faster feature delivery</p>
+                                <p class="kpi-desc">Clean architecture reduces friction when requirements evolve.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Security by design</p>
+                                <p class="kpi-desc">Auth, access controls, and secrets are handled correctly from launch.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Scales with usage</p>
+                                <p class="kpi-desc">Deployment and database choices support growth without rewrites.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Maintainable codebase</p>
+                                <p class="kpi-desc">Documentation and patterns reduce long-term maintenance costs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: API Integration & Workflow Automation -->
+    <div id="APIIntegrationWorkflowAutomation" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">API Integration &amp; Workflow Automation</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Salesforce" src="https://cdn.simpleicons.org/salesforce?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="JavaScript" src="https://cdn.simpleicons.org/javascript?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Connect systems and automate workflows so operations don’t depend on manual exports, copy/paste, or fragile scripts.
+                            This service covers API integration, event-driven processing, scheduled automations, and data synchronization
+                            between platforms (e.g., CRMs, databases, cloud services, internal tools).
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Scope of Work</h6>
+                        <ul>
+                            <li class="list-item text-dark">System integration design (source → transformation → destination)</li>
+                            <li class="list-item text-dark">API authentication (OAuth, tokens, service principals)</li>
+                            <li class="list-item text-dark">Reliable sync logic (retries, idempotency, dead-letter patterns)</li>
+                            <li class="list-item text-dark">Scheduling + monitoring (alerts on failure, run audit trails)</li>
+                            <li class="list-item text-dark">Error handling strategy (logging, payload capture, replay ability)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Deliverables</h6>
+                        <ul>
+                            <li class="list-item text-dark">API integration implementation (endpoints, payload mappings)</li>
+                            <li class="list-item text-dark">Automated workflows (scheduled and/or event-driven)</li>
+                            <li class="list-item text-dark">System synchronization and reconciliation logic</li>
+                            <li class="list-item text-dark">Monitoring and error reporting setup</li>
+                            <li class="list-item text-dark">Integration documentation + support handoff notes</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Operational efficiency</p>
+                                <p class="kpi-desc">Automations remove recurring manual tasks and reduce cycle time.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Fewer data mismatches</p>
+                                <p class="kpi-desc">Sync logic + reconciliation reduces inconsistencies across platforms.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">More reliability</p>
+                                <p class="kpi-desc">Retries, logging, and alerts turn failures into actionable tickets.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Better auditability</p>
+                                <p class="kpi-desc">Run history and payload traceability support governance and debugging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Data Strategy & Technical Consulting -->
+    <div id="DataStrategyTechnicalConsulting" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title font-weight-bold">Data Strategy &amp; Technical Consulting</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="tech-stack" style="margin-top:2px;">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="AWS" src="https://cdn.simpleicons.org/amazonaws?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft Azure" src="https://cdn.simpleicons.org/microsoftazure?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Microsoft SQL Server" src="https://cdn.simpleicons.org/microsoftsqlserver?viewbox=auto&size=32">
+                        <img class="tech-logo tech-logo--lg" loading="lazy" alt="Python" src="https://cdn.simpleicons.org/python?viewbox=auto&size=32">
+                    </div>
+                    <hr>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Overview</h6>
+                        <p class="text-dark">
+                            Clarify the technical strategy for your data and software systems. This service is structured as a short,
+                            high-impact engagement: assess the current state, identify risks and bottlenecks, and produce a clear roadmap
+                            for improving reliability, performance, and scalability.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">What We Assess</h6>
+                        <ul>
+                            <li class="list-item text-dark">Data architecture (sources, storage, modeling, governance)</li>
+                            <li class="list-item text-dark">Pipeline reliability (scheduling, monitoring, failure modes)</li>
+                            <li class="list-item text-dark">Database performance (indexing, query patterns, schema health)</li>
+                            <li class="list-item text-dark">Security posture (access controls, secrets management, least privilege)</li>
+                            <li class="list-item text-dark">Cost and scalability (right sizing, workload patterns, growth planning)</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Deliverables</h6>
+                        <ul>
+                            <li class="list-item text-dark">Current-state assessment + prioritized findings</li>
+                            <li class="list-item text-dark">Target-state architecture recommendations</li>
+                            <li class="list-item text-dark">Implementation roadmap (phased plan with milestones)</li>
+                            <li class="list-item text-dark">Risk register (what can break, how to mitigate)</li>
+                            <li class="list-item text-dark">Technical documentation package</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h6 class="font-weight-bold">Outcomes</h6>
+                        <div class="modal-kpi">
+                            <div class="kpi-card">
+                                <p class="kpi-title">Clear next steps</p>
+                                <p class="kpi-desc">A roadmap that aligns engineering effort with business impact.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Reduced technical risk</p>
+                                <p class="kpi-desc">Known bottlenecks and failure points are addressed proactively.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Higher ROI on engineering</p>
+                                <p class="kpi-desc">Effort goes to high-leverage improvements, not random refactors.</p>
+                            </div>
+                            <div class="kpi-card">
+                                <p class="kpi-title">Better stakeholder alignment</p>
+                                <p class="kpi-desc">Teams share definitions, constraints, and success metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn-primary btn px-4 ml-lg-4" href="#">Request</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
             </div>
             <!--<div id="layoutDefault_footer">
                     <div class="container">

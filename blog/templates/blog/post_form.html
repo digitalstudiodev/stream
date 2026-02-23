@@ -2,117 +2,12 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}
-Post
-{% endblock title %}
+{% block nav %}
+{% include 'blog/nav_content.html' %}
+{% endblock nav %}
 
 {% block content %}
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script>
-document.getElementById("id_content").required = false;
-window.onload = function() {
-    var simplemde = new SimpleMDE(
-        {
-        autofocus: true,
-        autosave: {},
-        blockStyles: {},
-        element: document.getElementById("id_content"),
-        forceSync: true,
-        hideIcons: [],
-        indentWithTabs: true,
-
-        lineWrapping: true,
-        placeholder: "Start typing...",
-        previewRender: function(plainText) {},
-        promptURLs: true,
-        showIcons: ["code",
-            "table",
-            "strikethrough",
-            "clean-block",
-            "horizontal-rule"],
-        spellChecker: true,
-        status: true,
-        styleSelectedText: true,
-        tabSize: 5,
-        toolbar: [/* Text styling */
-            "bold",
-            "italic",
-            "strikethrough",
-            "|",
-
-            /* Code and quotes */
-            "code",
-            "quote",
-            "|",
-
-            /* Lists */
-            "unordered-list",
-            "ordered-list",
-            "|",
-
-            /* Insert */
-            "link",
-            "image",
-            "table",
-            "horizontal-rule",
-            "|",
-
-            /* View modes */
-            "preview",
-            "side-by-side",
-            "fullscreen",
-            "|",
-
-            /* Help */
-            "guide",
-
-            "|", {
-                name: "custom-insert",
-                action: function(editor) {
-                    editor.codemirror.replaceSelection("**Custom Content**");
-                },
-                className: "fa fa-star",
-                title: "Insert Custom Content"
-            }],
-        toolbarTips: true,
-        shortcuts: {
-            drawTable: "Cmd-Alt-T",
-            togglePreview: "Cmd-P",
-            toggleSideBySide: "F9",
-            toggleFullScreen: "F11"
-        }
-        }
-    )
-};
-</script>
-<header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/code_header.jpeg" %})'>
-  
-    <div class="svg-border-waves text-light">
-        <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
-            <defs>
-                <style>
-                    .a {
-                        fill: none;
-                    }
-                    .b {
-                        clip-path: url(#a);
-                    }
-                    .d {
-                        opacity: 0.5;
-                        isolation: isolate;
-                    }
-                </style>
-                <clippath id="a"><rect class="a" width="1920" height="75"></rect></clippath>
-            </defs>
-            <title>wave</title>
-            <g class="b"><path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path></g>
-            <g class="b"><path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path></g>
-            <g class="b"><path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path></g>
-            <g class="b"><path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path></g>
-        </svg>
-    </div>
-  </header>
-<section class="bg-light py-10">
+<section class="py-10">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-10">
@@ -143,14 +38,16 @@ window.onload = function() {
                                 {{ form.content|as_crispy_field }}
                             </div>
                         </div>
-                        <hr class="my-4">
-
-                        <div class="editor-label">Select Tags (3 Max)</div>
-                        <div class="row g-2">
+                        <div class="row">
+                            <label class="ml-5 mb-2">Select Tags (3 Max)</label>
+                        </div>
+                        <div class="row">
                             {% for value in form.tag %}
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="tag-pill">
-                                {{ value }}
+                            <div class="col-lg-4">
+                                <div class="form-check bg-dark text-white lift rounded-pill my-2 px-4 py-2 font-weight-bold">
+                                    <label class="form-check-label" for="gridCheck">
+                                        {{ value }}
+                                    </label>
                                 </div>
                             </div>
                             {% endfor %}
@@ -189,22 +86,18 @@ window.onload = function() {
     </div>
 </section>
 <!--markdown form editor-->
+<!--<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+<script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-    const editor = new EasyMDE({
-
-        element: document.getElementById("id_content"),
-
-        autofocus: true,
-        spellChecker: true,
-        autosave: {
-            enabled: true,
-            uniqueId: "editor_content",
-            delay: 1000
-        },
-
-        status: ["autosave", "lines", "words", "cursor"],
+document.getElementById("id_content").required = false;
+window.onload = function() {
+    var simplemde = new EasyMDE(
+        {
+            autofocus: true,
+            element: document.getElementById("id_content"),
+            spellChecker: true,
+            status: ["autosave", "lines", "words", "cursor"],
 
         toolbar: [
             "bold",
@@ -231,9 +124,8 @@ document.addEventListener("DOMContentLoaded", function() {
             "|",
             "guide"
         ]
-
-    });
-
-});
+        }
+    )
+};
 </script>
 {% endblock %}

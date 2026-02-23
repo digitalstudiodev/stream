@@ -2,52 +2,21 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}
-{{ object.title }}
-{% endblock title %}
+{% block nav %}
+{% include 'blog/nav_content.html' %}
+{% endblock nav %}
 
 {% block content %}
-<header class="page-header page-header-dark bg-dark bg-img-cover overlay overlay-dark overlay-80" style='background-image: url({% static "assets/img/code_header.jpeg" %})'>
-    <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10 text-center m-auto align-items-center">
-                    <div data-aos="fade-up">
-                        <div class="row justify-content-center m-auto">
-                            
-                            <div class="icon-list-social mb-5">
-                                <a class="icon-list-social-link text-white" href="https://www.instagram.com/digitalstudio.dev/">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.facebook.com/digitalstudio.dev/">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://github.com/digitalstudiodev">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.linkedin.com/company/digitalstudio-dev/">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://medium.com/digital-studio-stream">
-                                    <i class="fab fa-medium"></i>
-                                </a>
-                                <a class="icon-list-social-link text-white" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    <div class="svg-border-rounded text-light">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
-  </header>
-<section class="bg-light py-10">
+<section class="py-10">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="single-post">
-                    <h1 class="text-center display-3 font-weight-bold">{{ object.title }}</h1>
-                    <p class="text-dark">{{ object.preview }}</p>
+                    <h1 class="text-center display-3 font-weight-bold"><span class="text-gradient">{{ object.title }}</span></h1>
+                    <div class="container">
+                        <div class="badge badge-pill badge-light text-dark text-wrap p-5 my-5">{{ object.preview }}</div>
+                    </div>
+                    
                     <div class="d-flex align-items-center justify-content-between mb-5">
                         <div class="single-post-meta mr-4">
                             <img class="single-post-meta-img" src="{{ object.author.profile.image.url }}" />
@@ -71,8 +40,8 @@
                     </div>
                     <img class="img-fluid mb-2" src="{{ object.featured_image.url }}" />
                     <div class="single-post-text my-5">
-                        <div class="content-markdown text-dark">
-                            {{ object.content }}
+                        <div class="content-markdown">
+                            {{ object.content|safe }}
                         </div>
                         <hr class="my-5" />
                         {% if object.author == request.user %}
