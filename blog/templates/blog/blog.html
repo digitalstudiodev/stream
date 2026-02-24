@@ -12,7 +12,8 @@ Feed
 
 {% block content %}
                         <div class="container px-5 mt-10">
-                            <div class="d-flex align-items-center justify-content-between">
+                            {% include 'blog/back_button.html' %}
+                            <div class="d-flex align-items-center justify-content-between mt-5">
                                 <h2 class="mb-0">
                                     {% if posts %}
                                         {% for post in posts|slice:":1" %}

@@ -1,0 +1,32 @@
+                    <div class="row">
+                        <a href="#" id="backBtn" style="display:none;">
+                        ← Back
+                        </a>
+
+                        <script>
+                        (function () {
+                            const backBtn = document.getElementById("backBtn");
+                            const referrer = document.referrer;
+                            const currentHost = window.location.host;
+
+                            if (referrer) {
+                            try {
+                                const refHost = new URL(referrer).host;
+
+                                if (refHost === currentHost) {
+                                // Came from inside the site → show button
+                                backBtn.style.display = "inline-block";
+
+                                backBtn.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                    history.back();
+                                });
+                                }
+                            } catch (err) {
+                                // Invalid referrer, do nothing (button stays hidden)
+                            }
+                            }
+                        })();
+                        </script>
+                    </div>
+                    
