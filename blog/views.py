@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from django import forms
+from django.db.models import Q
 
 
 def services(request):
@@ -33,6 +34,17 @@ class PostListView(ListView):
         first_tag = map(lambda x: x[0], tags)
         context['tags'] = first_tag
         return context
+    
+    def get_queryset(self):
+        qs = super().get_queryset()
+        q = (self.request.GET.get("q") or "").strip()
+        if q:
+            qs = qs.filter(
+                Q(title__icontains=q) |
+                Q(content__icontains=q) |
+                Q(tag__icontains=q)
+            ).distinct()
+        return qs
 
 class TagPostListView(ListView):
     model = Post

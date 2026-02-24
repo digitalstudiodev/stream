@@ -13,27 +13,8 @@ Feed
 {% block content %}
                         <div class="container px-5 mt-10">
                             {% include 'blog/back_button.html' %}
-                            <div class="d-flex align-items-center justify-content-between mt-5">
-                                <h2 class="mb-0">
-                                    {% if posts %}
-                                        {% for post in posts|slice:":1" %}
-                                                {% for tag in post.tag %}
-                                                        {% if tag == "Featured" %}
-                                                     <span class="text-gradient">Featured</span>
-                                                        {% endif %}
-                                                {% endfor %}
-                                        {% endfor %}
-                                        
-                                    {% endif %}
-                                </h2>
-                                <div>
-                                    <!--<a class="text-arrow-icon small" href="#!">
-                                        More headlines
-                                        <i data-feather="arrow-right"></i>
-                                    </a>-->
-                                </div>
-                            </div>
-                            <hr class="mb-4" />
+                            {% include 'blog/search.html' %}
+                            <hr class="my-4" />
                             {% for post in posts %}
                                 {% for tag in post.tag %}
                                     {% if tag == "Featured" %}
@@ -58,7 +39,7 @@ Feed
                             {% endfor %}
                             <div class="d-flex align-items-center justify-content-between">
                                 
-                                <h2 class="mb-0">
+                                <h2 class="my-4">
                                     {% if posts %}
                                 <span class="text-gradient">Recent</span>
                                 {% endif %}

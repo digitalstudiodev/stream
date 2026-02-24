@@ -1,0 +1,17 @@
+<div class="row">
+    <form method="get" action="{% url 'blog:content' %}" class="my-4">
+    <div class="input-group">
+        <input
+        type="search"
+        name="q"
+        class="form-control"
+        placeholder="Search posts..."
+        value="{{ request.GET.q|default:'' }}"
+        aria-label="Search posts"
+        />
+    <div class="input-group-append">
+      <button class="btn btn-light" type="submit">Search</button>
+    </div>
+  </div>
+</form>
+</div>
