@@ -26,16 +26,16 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-transparent">
                 <div class="container">
-                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder"><span class="nav-text text-white">Jose R. Dominguez</span></span></a>
+                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder"><span class="nav-text text-gradient">Jose R. Dominguez</span></span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="bi bi-list text-light"></i></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
+                            <!--<li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:resume' %}">Resume</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:services' %}">Services</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:posts-by-tag' 'Case-Studies' %}">Projects</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:content' %}">Content</a></li>
-                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>-->
                             <li class="nav-item">
                                 <div class="form-check form-switch mt-2">
                                     <label class="form-check-label" for="lightSwitch"> <span class="text-gradient">Dark Mode</span> </label>
@@ -295,8 +295,7 @@
                     </div>
                 </div>
             </div>-->
-            <div class="container py-5">
-  <div class="resume-module__d8vlBG__resumeContainer">
+            <div class="resume-module__d8vlBG__resumeContainer">
     <div class="content resume-module__d8vlBG__resumeContentContainer">
       <div class="resume-module__d8vlBG__intro">
         <div class="resume-module__d8vlBG__name">
@@ -557,8 +556,8 @@
 
       <!-- Note: Projects/Accomplishments removed because your attached resume emphasizes Experience + Skills -->
     </div>
-  </div>
-</div>
+            </div>
+            {% include 'blog/contact_section.html' %}
         </main>
         <!-- Footer-->
         <!--<footer class="bg-white py-4 mt-auto">

@@ -28,16 +28,16 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-transparent">
                 <div class="container">
-                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder"><span class="nav-text text-white">Jose R. Dominguez</span></span></a>
+                    <a class="navbar-brand" href="{% url 'blog:main' %}"><span class="fw-bolder"><span class="nav-text text-gradient">Jose R. Dominguez</span></span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="bi bi-list text-light"></i></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
+                            <!--<li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:main' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:resume' %}">Resume</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:services' %}">Services</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:posts-by-tag' 'Case-Studies' %}">Projects</a></li>
                             <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'blog:content' %}">Content</a></li>
-                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link nav-text text-dark font-weight-bold" href="{% url 'store:store-home' %}">Shop</a></li>-->
                             <li class="nav-item">
                                 <div class="form-check form-switch mt-2">
                                     <label class="form-check-label" for="lightSwitch"> <span class="text-gradient">Dark Mode</span> </label>
@@ -124,32 +124,7 @@
                     </div>
             </div>
             <!-- Contact -->
-            <section class="py-5" id="contact">
-                <div class="container px-5">
-                    <!-- Contact form-->
-                    <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-                        <div class="row gx-5 justify-content-center mb-5">
-                            <div class="text-center mb-5">
-                                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                                <h1 class="fw-bolder text-gradient">Ready to support your next project.</h1>
-                                <p class="lead fw-normal text-muted mb-0">
-                                    Open to collaboration and project inquiries.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row gx-5 justify-content-center mb-5">
-                            <div class="col-lg-8 col-xl-6">
-                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder m-2" href="mailto:josedom000@gmail.com">
-                                Start a Project Conversation
-                            </a>
-                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder m-2" href="tel:+18628034630">Call Now</a>
-                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder m-2" href="/jose-dominguez.vcf" download="Jose-Ramon-Dominguez.vcf">Save Contact</a>
-                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder m-2" href="#">Schedule a Meeting</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {% include 'blog/contact_section.html' %}
         </main>
         <!-- Footer-->
         <!--<footer class="bg-white py-4 mt-auto">

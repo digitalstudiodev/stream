@@ -13,7 +13,7 @@ Feed
 {% block content %}
                         <div class="container px-5 mt-10">
                             <div class="d-flex align-items-center justify-content-between">
-                                <h6 class="mb-0">
+                                <h2 class="mb-0">
                                     {% if posts %}
                                         {% for post in posts|slice:":1" %}
                                                 {% for tag in post.tag %}
@@ -24,7 +24,7 @@ Feed
                                         {% endfor %}
                                         
                                     {% endif %}
-                                </h6>
+                                </h2>
                                 <div>
                                     <!--<a class="text-arrow-icon small" href="#!">
                                         More headlines
@@ -56,9 +56,12 @@ Feed
                                 {% endfor %}
                             {% endfor %}
                             <div class="d-flex align-items-center justify-content-between">
-                                {% if posts %}
+                                
+                                <h2 class="mb-0">
+                                    {% if posts %}
                                 <span class="text-gradient">Recent</span>
                                 {% endif %}
+                                </h2>
                                 <!--<div>
                                     <a class="text-arrow-icon small" href="#!">
                                         View more
