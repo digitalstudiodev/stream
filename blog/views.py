@@ -1,3 +1,5 @@
+from time import timezone
+
 from django.shortcuts import render, get_object_or_404, redirect
 from users.models import User
 from blog.models import TAG_OPTIONS
@@ -8,7 +10,33 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 from django import forms
 from django.db.models import Q
+from .forms import SubscriberForm
+from .models import Subscriber
 
+def subscribe(request):
+    if request.method == "POST":
+        email = request.POST.get("email", "").lower().strip()
+        action = request.POST.get("action")
+
+        if not email:
+            messages.info(request, "Please enter a valid email.")
+            return redirect(request.META.get("HTTP_REFERER", "/"))
+
+        subscriber, created = Subscriber.objects.get_or_create(email=email)
+
+        if action == "subscribe":
+            subscriber.is_active = True
+            subscriber.unsubscribed_at = None
+            subscriber.save()
+            messages.success(request, "You are now subscribed.")
+
+        elif action == "unsubscribe":
+            subscriber.is_active = False
+            subscriber.unsubscribed_at = timezone.now()
+            subscriber.save()
+            messages.success(request, "You have been removed from the list.")
+
+    return redirect(request.META.get("HTTP_REFERER", "/"))
 
 def services(request):
     return render(request, 'blog/services.html')

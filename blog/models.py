@@ -41,3 +41,13 @@ class Post(models.Model):
     def get_shorten_preview(self):
         # returning the first 100 characters of the preview
         return str(self.preview)[0:100] + str(" ... ")
+
+
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    unsubscribed_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.email

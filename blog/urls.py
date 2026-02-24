@@ -1,9 +1,10 @@
 from django.urls import path, include
-from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, TagPostListView, services, main, resume)
+from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, TagPostListView, services, main, resume, subscribe)
 
 app_name = 'blog'
 
 urlpatterns = [
+    path("subscribe/", subscribe, name="subscribe"),
     path('services/', services, name='services'),
     path('', main, name='main'),
     path('resume/', resume, name='resume'),

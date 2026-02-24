@@ -14,6 +14,7 @@ Feed
                         <div class="container px-5 mt-10">
                             {% include 'blog/back_button.html' %}
                             {% include 'blog/search.html' %}
+                            {% include 'blog/messages.html' %}
                             <hr class="my-4" />
                             {% for post in posts %}
                                 {% for tag in post.tag %}
@@ -123,11 +124,11 @@ Feed
                                 <div class="card-body p-5">
                                     <div class="row gx-5 align-items-center">
                                         <div class="col-lg-6">
-                                            <h4>Get the latest news</h4>
+                                            <h4>Get insights before everyone else</h4>
                                             <div data-aos="fade-up">
                                                     <div class="justify-content-center m-auto">
                                                         
-                                                        <div class="icon-list-social">
+                                                        <!--<div class="icon-list-social">
                                                             <a class="icon-list-social-link" href="https://www.instagram.com/digitalstudio.dev/">
                                                                 <i class="fab fa-instagram text-light"></i>
                                                             </a>
@@ -146,17 +147,41 @@ Feed
                                                             <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCjFGpMrV6GVAYIXG_lbX45g">
                                                                 <i class="fab fa-youtube text-light"></i>
                                                             </a>
-                                                        </div>
+                                                        </div>-->
                                                     </div>
                                                 </div>
-                                            <p class="lead text-gray-500 mb-0">Stay in the loop with the latest stories and breaking headlines!</p>
+                                            <p class="lead text-gray-500 mb-0">Receive new articles, case studies, and technical breakdowns directly in your inbox.</p>
                                         </div>
                                         <div class="col-lg-6">
-                                            <div class="input-group mb-2">
-                                                <input class="form-control form-control-solid" type="text" placeholder="youremail@example.com" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                                                <button class="btn btn-primary" id="button-addon2" type="button">Sign up</button>
-                                            </div>
-                                            <div class="small text-gray-500">You can unsubscribe at any time.</div>
+                                            <form method="post" action="{% url 'blog:subscribe' %}" class="d-flex gap-2">
+                                            {% csrf_token %}
+                                            
+                                            <input 
+                                                type="email" 
+                                                name="email" 
+                                                class="form-control" 
+                                                placeholder="Your email" 
+                                                required
+                                            >
+
+                                            <button 
+                                                class="btn btn-dark" 
+                                                type="submit" 
+                                                name="action" 
+                                                value="subscribe"
+                                            >
+                                                Subscribe
+                                            </button>
+
+                                            <button 
+                                                class="btn btn-outline-secondary" 
+                                                type="submit" 
+                                                name="action" 
+                                                value="unsubscribe"
+                                            >
+                                                Remove
+                                            </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
