@@ -1,4 +1,3 @@
-from datetime import timezone
 
 from django.shortcuts import render, get_object_or_404, redirect
 from users.models import User
@@ -12,7 +11,7 @@ from django import forms
 from django.db.models import Q
 from .forms import SubscriberForm
 from .models import Subscriber
-from datetime import timezone
+from django.utils import timezone
 
 def subscribe(request):
     if request.method == "POST":
@@ -29,13 +28,13 @@ def subscribe(request):
             subscriber.is_active = True
             subscriber.unsubscribed_at = None
             subscriber.save()
-            messages.success(request, "You are now subscribed.")
+            messages.success(request, f"Successfully subscribed with email: {email}")
 
         elif action == "unsubscribe":
             subscriber.is_active = False
             subscriber.unsubscribed_at = timezone.now()
             subscriber.save()
-            messages.success(request, "You have been removed from the list.")
+            messages.success(request, f"You have been removed from the list with email: {email}")
 
     return redirect(request.META.get("HTTP_REFERER", "/"))
 
