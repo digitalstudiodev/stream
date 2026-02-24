@@ -1,4 +1,4 @@
-from time import timezone
+from datetime import timezone
 
 from django.shortcuts import render, get_object_or_404, redirect
 from users.models import User
@@ -12,6 +12,7 @@ from django import forms
 from django.db.models import Q
 from .forms import SubscriberForm
 from .models import Subscriber
+from datetime import timezone
 
 def subscribe(request):
     if request.method == "POST":
