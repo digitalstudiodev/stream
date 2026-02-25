@@ -67,8 +67,8 @@
                 <h1 class="text-green font-weight-bold display-5">$ {{ item.price }}</h1>
                 {% endif %}
                 <p class="lead">Available &nbsp;&nbsp;&nbsp; {{ object.inventory }}</p>
-                <p class="content-markdown text-dark " ><strong>Description</strong> <br> {{ object.description }}</p>
-                <p class="content-markdown text-dark "><strong>Additional Information</strong> <br>  {{ object.additional_info }}</p>
+                <p class="content-markdown " ><strong>Description</strong> <br> {{ object.description }}</p>
+                <p class="content-markdown"><strong>Additional Information</strong> <br>  {{ object.additional_info }}</p>
                 {% if object.inventory > 0 %}
                 <p class="lead">Please review our <a href="{% url 'store:terms' %}">Term of Service</a> before completing purchase</p>
                 <p>
