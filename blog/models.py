@@ -25,7 +25,8 @@ TAG_OPTIONS = (
 class Post(models.Model):
     title = models.CharField(max_length=100, default="")
     preview = models.CharField(max_length=5000, default="")
-    content = models.TextField(default="", verbose_name="Content")
+    content = models.TextField(default="", verbose_name="Content", null=True, blank=True, help_text="You can also upload a .html file with the content. If both are provided, the .html file will be used.")
+    content_html_file = models.FileField(upload_to="post_html_files/", null=True, blank=True, verbose_name="Content HTML File")
     date_posted = models.DateTimeField(default=timezone.now)
     read_time = models.IntegerField(default=5, verbose_name="Read Time", help_text="in minutes")
     author = models.ForeignKey(User, on_delete=models.CASCADE)

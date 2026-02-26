@@ -96,20 +96,52 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'preview', 'read_time', 'content' ,'tag', 'featured_image']
+    fields = ['title', 'preview', 'read_time', 'content_html_file', 'content' ,'tag', 'featured_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def clean_html_upload(self):
+        f = self.cleaned_data.get("content_html_file")
+        if not f:
+            return None
+
+        name = (f.name or "").lower()
+        if not name.endswith((".html", ".htm")):
+            raise forms.ValidationError("Please upload an .html or .htm file.")
+
+        # optional: size guard (e.g., 2MB)
+        max_bytes = 2 * 1024 * 1024
+        if f.size > max_bytes:
+            raise forms.ValidationError("File too large (max 2MB).")
+
+        return f
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
 
-    fields = ['title', 'preview', 'read_time', 'content', 'tag', 'featured_image']
+    fields = ['title', 'preview', 'read_time', 'content_html_file', 'content', 'tag', 'featured_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def clean_html_upload(self):
+        f = self.cleaned_data.get("content_html_file")
+        if not f:
+            return None
+
+        name = (f.name or "").lower()
+        if not name.endswith((".html", ".htm")):
+            raise forms.ValidationError("Please upload an .html or .htm file.")
+
+        # optional: size guard (e.g., 2MB)
+        max_bytes = 2 * 1024 * 1024
+        if f.size > max_bytes:
+            raise forms.ValidationError("File too large (max 2MB).")
+
+        return f
 
     def test_func(self):
         post = self.get_object()
