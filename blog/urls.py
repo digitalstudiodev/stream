@@ -4,9 +4,9 @@ from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView
 app_name = 'blog'
 
 urlpatterns = [
+    path('', main, name='main'),
     path("subscribe/", subscribe, name="subscribe"),
     path('services/', services, name='services'),
-    path('', main, name='main'),
     path('resume/', resume, name='resume'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('content/', PostListView.as_view(), name='content'),

@@ -24,9 +24,9 @@ from users import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls', namespace='users')),
-    path('store/', include('store.urls', namespace='store')),
-    path('', include('blog.urls', namespace='blog')),
+    path('users/', include('users.urls')),
+    path('store/', include('store.urls')),
+    path('', include('blog.urls')),
     #reset password
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name="users/password_reset/password_reset.html"), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name="users/password_reset/password_reset_done.html"), name='password_reset_done'),

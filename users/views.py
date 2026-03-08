@@ -9,11 +9,11 @@ from .models import User
 
 def invalid_view1(request):
     messages.warning(request,f'Invalid Request.')
-    return render(request, 'users/404.html')
+    return render(request, 'users/404.html', status=500)
 
 def invalid_view2(request, exception):
     messages.warning(request,f'Invalid Request: {exception}.')
-    return render(request, 'users/404.html')
+    return render(request, 'users/404.html', status=404)
 
 def register(request):
     form = UserRegisterForm()
