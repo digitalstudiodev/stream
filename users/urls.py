@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import (register, profile, profile_update, login_view, logout_view, base)
+from .views import (invalid_view1, invalid_view2, register, profile, profile_update, login_view, logout_view, base)
 
 app_name = 'users'
 
